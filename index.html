@@ -1,0 +1,2313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hatch - Home</title>
+</head>
+
+<body>
+<style>
+  html,
+body {
+  top: 0px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 100%;
+}
+html {
+  scrollbar-gutter: stable;
+}
+body {
+	font-family: Arial;
+  font-size: 14px;
+  margin: 0 auto;
+  transition: color .5s ease-out, background .5s ease-out;
+  font-weight: normal;
+  background-color: #fff;
+}
+.header {
+  height: 30px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 2px solid #ddd;
+}
+.header h1 {
+  position: absolute;
+  font-size: 20px;
+  margin: 0px;
+  left: 20px;
+}
+.contain {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.container {
+  width: 950px;
+  padding: 0;
+  margin: 0 auto;
+}
+.main {
+  height: calc(100% - 60px);
+  padding: 12px;
+}
+.backDiv {
+  position: fixed;
+  margin-left: -120px;
+  margin-top: 10px;
+}
+
+#notebooks {
+  position: absolute;
+  top: 0px;
+  width: calc(950px - 240px);
+  padding-top: 10px;
+}
+.nav {
+  position: absolute;
+  margin-left: 0%;
+  top: 0px;
+  bottom: 0px;
+  width: 240px;
+}
+
+ul {
+  overflow-x: hidden;
+  margin: 0 auto;
+  overflow-y: auto;
+  border-left: none;
+  border-right: none;
+}
+
+
+ul ol {
+  padding-left: 20px;
+}
+
+table {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  border-collapse: collapse;
+  width: 100%;
+  border-left: 0;
+  border-spacing: 0px;
+}
+
+input {
+	font-family: Arial;
+  width: 70%;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #bcb6b3;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 10px 15px 10px 15px;
+}
+
+
+button {
+  position: relative;
+  border-radius: 4px;
+  font-weight: 700;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  height: 24px;
+  margin-right: 10px;
+  padding-left: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  background: linear-gradient(#fff,#eae6e5);
+  border: 1px solid #938c89;
+  color: #3b1800;
+}
+button:hover {
+  background: #e8e3e1;
+  background: -webkit-linear-gradient(#f4f0ef,#ddd6d3);
+  background: linear-gradient(#f4f0ef,#ddd6d3);
+  color: #595656;
+}
+select {
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding-left: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #bcb6b3;
+  border-radius: 4px;
+  outline: none;
+}
+.sort {
+  padding: 10px;
+}
+.sortList {
+  display: flex;
+  list-style: none;
+  position: absolute;
+  margin-top: -40px;
+  margin-right: 10px;
+  right: 0;
+}
+.sorter {
+  display: flex;
+  align-items: center;
+  width: 92px;
+  box-sizing: border-box;
+  border: 1px solid #bcb6b3;
+  border-right: 0;
+  
+  padding: 4px 4px;
+  font-size: 12px;
+  color: #3b1800;
+  text-align: center;
+}
+.sorter:last-child {
+  border: 1px solid #bcb6b3;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.sorter:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.quizBtn {
+  margin-top: 10px;
+  font-family: Arial;
+  width: fit-content;
+  margin-right: 10px;
+  box-sizing: border-box;
+  background: #f1f1f1;
+  border: #a9a9a9 1px solid;
+  font-size: 12px;
+}
+.quiz {
+  box-sizing: border-box;
+  padding: 10px 20px;
+  background: #f1f1f1;
+  width: 100%;
+}
+.search {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  height: 32px;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 32px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none !important;
+  cursor: pointer;
+  background: #2297f4;
+  background: -webkit-gradient(linear, left top, left bottom, from(#38affc), to(#0174e7));
+  background: -webkit-linear-gradient(#38affc, #0174e7);
+  background: linear-gradient(#38affc, #0174e7);
+  border: 1px solid #2171e0;
+  border-radius: 4px;
+}
+.search:hover {
+  background: linear-gradient(#38affc, #0174e7);
+  color: white;
+}
+.baloon {
+  border: 1px solid #e0dbd7;
+  background-color: #fffaf1;
+  margin-top: 16px;
+  word-break: break-word;
+  cursor:auto;
+  border-radius: 4px;
+  margin: 10px auto 0;
+  padding: 12px 16px 14px;
+}
+td,
+th {
+  padding: 8px;
+}
+tr:nth-child(odd) {
+  background-color: #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th {
+  text-align: left;
+  background-color: #7dcbaf;
+  color: white;
+  vertical-align: auto;
+}
+
+.table {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.list {
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 10px 15px 10px 15px;
+  margin-bottom: 5px;
+  width: 100%;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-left: 0px;
+}
+
+.element {
+  height: 44px;
+  display: flex;
+  margin-bottom: 5px;
+  border: 1px solid #e0dbd7;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.card { 
+  margin: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.card:first-child {
+  margin-top: 0;
+}
+.top {
+  padding: 4px 16px;
+  border-radius: 5px 5px 0 0;
+  color: white;
+  word-break: break-all;
+  font-weight: bold;
+  vertical-align: top;
+}
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.pageTitle {
+  width: auto;
+  margin-top: -2px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.4;
+  word-break: break-all;
+}
+.contents {
+  padding: 15px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-top: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0 0 5px 5px;
+}
+.urls {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 10px;
+}
+.colour {
+  height: 100%;
+  width: 12px;
+}
+.error {
+  background-color: #fff;
+  margin: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.text {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  line-height: 0%;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  padding-left: 20px;
+  border-left: 0;
+  padding-right: 15px;
+}
+
+.tag {
+  display: inline-block;
+  margin: -10px 0px 16px 0px;
+  vertical-align: middle;
+  font-size: 10px;
+  font-weight: 700;
+  height: 14px;
+  color: #918b8a;
+}
+.element:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.locked:hover {
+  opacity: 1;
+  cursor:initial;
+}
+
+.links {
+  position: relative;
+  width: auto;
+  padding: 20px 8px 12px;
+  margin-top: 12px !important;
+  color: #3b1800;
+  background: none;
+  background-color: #f7f5f2;
+  border: 1px solid #e0dbd7;
+  border-radius: 4px;
+}
+hr {
+  outline: none;
+  border: 1px solid #ddd;
+}
+#filter {
+  position: relative;
+  width: auto;
+  padding: 8px 8px 12px;
+  margin-top: 12px !important;
+  color: #3b1800;
+  background: none;
+  background-color: #f7f5f2;
+  border: 1px solid #e0dbd7;
+  border-radius: 4px;
+}
+.text-label { 
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 10px;
+}
+.back {
+  color: #000;
+}
+.back:hover {
+  text-decoration: none;
+  color: #ddd;
+}
+.home {
+  width: 100%;
+  font-size: 20px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: none;
+  border: none;
+}
+.home:hover {
+  text-decoration: none;
+  background: none;
+  color: #545;
+}
+
+#query {
+  background-color: rgba(0,0,0,.05);
+  width: 100%;
+}
+
+.toggle {
+  background-color: #fff;
+  width: 150px;
+}
+.active {
+  background: #dddddd;
+}
+.active:hover {
+  background: #dddddd;
+}
+
+.post {
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 100%;  
+  margin-bottom: 20px;
+  margin-top: 3px;
+}
+
+canvas, img {
+  max-width: 400px;
+  margin-left: 50%;
+  background-color: #fff;
+  margin-bottom: -3px;
+  transform: translate(-50%, 0%);
+}
+.label {
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 900px) {
+  #notebooks {
+    width: 85%;
+    margin-left: 0px;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -0%);
+  }
+}
+
+input:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+
+</style>
+
+  <div class="container">
+    <div id="nav" class="nav">
+      <div id="filter">
+        <button class="home" onclick="init()">Hatch</button>
+        <hr>
+        <h3 class="text-label">Search by term</h3>
+        <input type="text" id="query" onkeydown="search(event, this.value)" placeholder="Enter search term..." />
+        <h3 class="text-label">Tags</h3>
+        <select name="tags" id="tags">
+        </select>
+        <h3 class="text-label">Year</h3>
+        <select name="years" id="years">
+          <option value="0">All</option>
+          <option value="1">First Year</option>
+          <option value="2">Second Year</option>
+          <option value="3">Third Year</option>
+        </select>
+        <button class="search" onclick="search(true, document.getElementById('query').value)">Search</button>
+      </div>
+    </div>
+    <div id="notebooks">
+    </div>
+  </div>
+  <script>
+    const contents = document.getElementById("notebooks")
+    let mode = "text";
+    var searchParams = new URLSearchParams(window.location.search);
+    let mX, mY;
+    const filtered = []
+    let currentPage = ["Home"];
+    let Objects = [];
+    const objectsToRemove = [];
+
+
+    const pages = [
+      {
+        name: "English",
+        colour: "#ef476f",
+        subs: [
+          {
+            name: "Poetry",
+            subs: [
+              { name: "Poetic Techniques" }
+            ]
+          },
+          { name: "Grammar" },
+          { name: "Literature" },
+          { name: "Drama" },
+          { name: "Films" },
+          { name: "Creative Writing" },
+          { name: "CBA 1" }
+        ]
+      },
+      {
+        name: "Irish",
+        colour: "#FFD32E",
+        subs: [
+          { name: "Literature" },
+          { name: "Grammar" },
+          { name: "Writing" },
+          { name: "Vocabulary" }
+        ]
+      },
+      {
+        name: "Maths",
+        colour: "#1b9aaa",
+        subs: [
+          { name: "Trigonometry" },
+          {
+            name: "Algebra",
+            subs: [
+              { name: "Factorising" },
+              { name: "Fractions" },
+              { name: "Equations" },
+            ]
+          },
+          { name: "Sets" },
+          { name: "Functions" },
+          {
+            name: "Geometry",
+          },
+          { name: "Taxes" },
+          { name: "CBA 1" }
+        ]
+      },
+      {
+        name: "Science",
+        colour: "#90be6d"
+      },
+      {
+        name: "Geography",
+        colour: "#06d6a0",
+        subs: [
+          { name: "Erosion" },
+          { name: "Urbanisation" },
+          { name: "Plate Techtonics" },
+          { name: "Rocks" }
+        ]
+      },
+      {
+        name: "History",
+        colour: "#f8961e"
+      },
+      {
+        name: "French",
+        colour: "#f15bb5",
+        subs: [
+          { name: "Literature" },
+          { name: "Grammar" },
+          { name: "Writing" },
+          { name: "Vocabulary" }
+        ]
+      },
+      {
+        name: "Technical Graphics",
+        colour: "#577590",
+      },
+      {
+        name: "Extra Curricular Activities",
+        colour: "#800080",
+        subs: [
+          {
+            name: "MUN",
+            subs: [
+              { name: "Rules" },
+              { name: "Resolutions" },
+              { name: "Tools" }
+            ]
+          },
+          {
+            name: "Chess",
+            subs: [
+              { name: "Rules" },
+              { name: "Openings" },
+              { name: "Puzzles" },
+            ]
+          },
+          { name: "Lego" },
+          {
+            name: "Go / Baduk",
+            subs: [
+              { name: "Rules" },
+              { name: "Jyoseki" },
+              { name: "Fuseki" },
+              { name: "Puzzles" }
+            ]
+          }
+        ]
+      },
+      {
+        name: "Other",
+        colour: "#000000",
+        subs: [
+          { name: "Geo Studies" },
+          { name: "Chinese" }
+        ]
+      }
+    ]
+
+    let drawScreens = {
+      "go": () => { },
+      "chess": () => { },
+      "space": () => { },
+      "angle": () => { },
+      "molecules": () => { },
+      "equation": () => { }
+    }
+
+    let tags = [
+      {
+        name: "Science",
+        tags: ["Physics", "Chemistry", "Biology"]
+      },
+      {
+        name: "Maths",
+        tags: ["Geometry", "Algebra", "Probability", "Set Theory"]
+      }
+    ]
+
+    const data = [
+      {
+        name: "Reflexive Writing",
+        data: [""],
+        page: ["English", "Creative Writing"]
+      },
+      {
+        name: "Romeo and Juliet quotes",
+        data: [`
+    <li class="list">
+    Part fools / Put up your swords. You know not what to do. – <b>Benvolio 1:1</b>
+    </li><li class="list">
+    What drawn, and talk of peace! I hate the word as I hate hell, all Montagues and thee – <b>Tybalt 1:1</b>
+    </li><li class="list">
+    If ever you disturb our streets again, your lives will pay the forfeit of the peace – <b>Prince Escalus 1:1</b>
+    </li><li class="list">
+    Many a morning hath he been seen with tears augmenting to the fresh morning dew. And private in chamber, pens him, shuts up his windows and locks out fair daylight and makes himself an artificial night – <b>Lord Montague 1:1</b>
+    </li><li class="list">
+    O me! What fray was here? Yet tell me not, for I have heard it all. Here’s much to do with hate but more with love – <b>Romeo 1:1</b>
+    </li><li class="list">
+    She hath not seen the change of fourteen years. Let two more summers wither in their pride. Ere we may think her ripe to be a bride – <b>Lord Capulet 1:2</b>
+    </li><li class="list">
+    I’ll look to like but looking like move, but no more deep will I endart mine eye than your consent gives strength to make it fly – <b>Juliet 1:3</b>
+    </li><li class="list">
+    O, She doth teach the torches to burn bright! It seems she hangs upon the cheek of night. Like a rich jewel in an Ethiop’s ear – <b>Romeo 1:5</b>
+    </li><li class="list">
+    O swear not by the moon, the inconstant moon, that monthly changes in her circled orb, lest that thy love prove likewise variable – <b>Juliet 2:2</b>
+    </li><li class="list">
+    My Bounty is as boundless as the sea, My love as deep. The more I give to thee, the more I have, for both are infinite – <b>Juliet 2:2</b>
+    </li><li class="list">
+    Two such opposed kings encamp them still, In man as well as herbs: grace and rude will. And where the worser is predominant, Full soon the canker death eats up that plant – <b>Friar Laurence 2:3</b>
+    </li><li class="list">
+    These violent delights have violent ends, and in their triumph die, like fire and powder, which as they kiss consume – <b>Friar Laurence 2:6</b>
+    </li><li class="list">
+    A plague o’both your houses! I am sped. Is he gone, and hath nothing? – <b>Mercutio 3:1</b>
+    </li><li class="list">
+    Death, that hath sucked the honey of thy breath, hath had no power yet upon thy beauty. Thou art not conquered: beauty’s ensign yet, Is crimson in thy lips and in thy cheeks, - <b>Romeo 5:3</b>
+    </li>
+    `],
+        level: 3,
+        excerpt: "A list of quotes from the play by William Shakespear, Romeo and Juliet",
+        page: ["English", "Drama"]
+      },
+      {
+        name: "Angles",
+        data: [`
+    There are only <b>five</b> types of angles you need to remember.</br>
+    They are`,
+          `canvas|angle|false|500,500|[120, 200]`,
+          `<div class="label"><b>Obtuse</b> (Internal angle is greater than 90 degrees, less than 180 degrees)</div>`,
+          `canvas|angle|false|500,500|[30, 200]`,
+          `<div class="label"><b>Acute</b> (Internal angle is less than 90 degrees)</div>`,
+          `canvas|angle|false|500,500|[180, 200]`,
+          `<div class="label"><b>Straight</b> (Internal angle is 180 degrees)</div>`,
+          `canvas|angle|false|500,500|[90, 200]`,
+          `<div class="label"><b>Right angle</b> (Internal angle is 90 degrees)</div>`,
+          `canvas|angle|false|500,500|[230, 200]`,
+          `<div class="label"><b>Reflex</b> (Internal angle is greater than 180 degrees, less than 360 degrees)</div>
+    `],
+        level: 1,
+        excerpt: "There are a total of 5 types of angles you need to remember in Maths.",
+        page: ["Maths", "Geometry"]
+      },
+      {
+        name: "An Aimsir Chaite (The Past Tense)",
+        data: [`
+    The past tense in Irish is probably the easiest tense to remember with only 3 cases, and only one ending for the we form for one syllable verbs. Before we dive into the conjugation, let's start off with a couple basic rules.</br>
+    Verbs in Irish can either be <b>caol</b> (slender) or <b>leathan</b> (broad). The broad vowels are <b>a,o,u</b>, and the slender vowels are <b>i and e</b>.</br>
+
+    <h2>One Syllable</h2>
+    When conjugating a verb in the past tense in Irish, you have to a) add letters to the <b>beginning</b> of the verb, and b) add the respective pronouns</br>
+    For the beginning, if the first letter of the verb is...</br>
+    - <b>A vowel</b> then you add a <b>D'</b>,</br>
+    - <b>A consonant</b> that is <b>not l, n, or r</b> then you add a <b>séimhiú(h)</b>,</br>
+    - <b>The letter "F"</b> t then you add a <b>séimhiú(h)</b> and a <b>D'</b> (Fág => <b>D'</b>f<b>h</b>ág),</br>
+    </br>
+    There are no endings for the past tense, so you use the pronouns "Mé/tú/sé/sí/sinn(muid)/sibh/siad (I you he she we you they)", but for the sinn/muid(we) form, you use <b>eamar/amar</b> as the endings instead of just putting sinn/muid. (Tuig muid => T<b>h</b>uigeamar) </br>
+    For a question, you use <b>"Ar"</b> and a <b>séimhiú</b> regardless of it's starting letter.</br>
+    For the saorbhriathar (The Free Verb), use <b>eadh/adh</b> as the endings, without the D' or séimhiú</br>
+
+    <h2>Two Syllables</h2>
+    The rules are nearly exactly the same as the one syllable verbs, but the sinn/muid(we) form, we use <b>aíomar/íomar</b> for the endings, and use <b>aíodh / íodh for the saorbhriathar(The Free Verb)</b>.
+    
+    <h2>Irregular Verbs</h2>
+    There are only 11 Irish Irregular verbs, which are the same for all four tenses. </br>
+    Note: Remember to conjugate the third column as shown above with the regular rules, as this is only the me form.
+    </br>
+    <div class="table">
+    <table><thead><tr><th>Verb</th><th>English</th><th>"Mé" form</th><th>Negative</th><th>Question</th></tr></thead><tbody><tr><td>Abair</td><td>To Say</td><td>Dúirt mé</td><td>Ní dúirt</td><td>An ndúirt?</td></tr><tr><td>Beir</td><td>To Catch</td><td>Rug mé</td><td>Níor rug</td><td>Ar rug?</td></tr><tr><td>Bí</td><td>To Be</td><td>Bhí mé</td><td>Ní raibh</td><td>An raibh?</td></tr><tr><td>Clois</td><td>To Hear</td><td>Chuala mé</td><td>Níor chuala</td><td>Ar chuala?</td></tr><tr><td>Déan</td><td>To Make</td><td>Rinne mé</td><td>Ní dhearna</td><td>An ndearna?</td></tr><tr><td>Faigh</td><td>To Get</td><td>Fuair mé</td><td>Ní bhfuair</td><td>An bhfuair?</td></tr><tr><td>Feic</td><td>To See</td><td>Chonaic mé</td><td>Ní fhaca</td><td>An bhfaca?</td></tr><tr><td>Ith</td><td>To Eat</td><td>D'ith mé</td><td>Níor ith</td><td>Ar ith tú?</td></tr><tr><td>Tabhair</td><td>To Give</td><td>Thug mé</td><td>Níor thug</td><td>Ar thug tú?</td></tr><tr><td>Tar</td><td>To Come</td><td>Thánig mé</td><td>Níor tháinig</td><td>Ar tháinig tú</td></tr><tr><td>Téigh</td><td>To Go</td><td>Chuaigh mé</td><td>Ní dheachaidh</td><td>An ndeachaigh?</td></tr></tbody></table>
+    </div>
+    `],
+        test: [
+          "Conjugate into the past tense",
+          {
+            question: "Imigh (mé)",
+            answers: ["D'imigh mé"]
+          },
+          {
+            question: "Ar bailigh (sé)",
+            answers: ["Ar bhailigh sé"]
+          },
+          {
+            question: "Mothaigh (muid)",
+            answers: ["Mhothaíomar"]
+          }
+        ],
+        level: 1,
+        url: "aimsir-chaite",
+        excerpt: "In Irish, the past tense, or 'Aimsir Chaite,' reflects actions that have already occurred. ",
+        page: ["Irish", "Grammar"]
+      },
+      {
+        name: "An Aimsir Láithreach (The Present Tense)",
+        data: [`
+    The present tense in Irish, you check the amount of syllables and broad and slender just like in the past tense. 
+    <h2>One syllable verbs</h2>
+    For the one syllable verbs you then use <b>aim(for broad verbs)/im(for slender verbs)</b> for first person, and <b>ann(for broad verbs)/eann(for slender verbs)</b> as the endings of second and third person verbs. </br>
+    For the We/Us part, you use <b>aimid/imid</b> as the endings. </br>
+    For a question, you use <b>"An"</b> and a <b>urú</b></br>
+    For the saorbhriathar (The Free Verb), use <b>tar/tear</b> as the endings.</br>
+    <h2>Two syllable verbs</h2>
+    For the two syllable verbs, you use <b>aím/ím</b> and <b>aíonn/íonn</b> for the endings respective of their pronouns.</br>
+    The big difference between the one and two syllable verbs are the endings. You have to remove the endings first before adding a new one.</br>
+    Here are the endings to remove: </br>
+    - For verbs that finish in <b>aigh/igh</b>, remove <b>the aigh/igh</b></br>
+    - For verbs that don't finish in <b>aigh/igh</b>, remove the last <b>vowel/vowels</b> (E.g. Oscail => Oscl, Imir => Imr)</br>
+    <h2>Irregular Verbs</h2>
+    There are only 11 Irish Irregular verbs, which are the same for all four tenses. </br>
+    Note: Remember to conjugate the third column as shown above with the regular rules, as this is only the mé/sé/sí form.
+    <div class="table">
+    <table><thead><tr><th>Verb</th><th>English</th><th>"Mé/Sé/Sí" form</th><th>Negative</th><th>Question</th></tr></thead><tbody><tr><td>Abair</td><td>To Say</td><td>Deirim<br>Deir sé/sí</td><td>Ní deir</td><td>An ndeir?</td></tr><tr><td>Beir</td><td>To Catch</td><td>Beirim<br>Beireann sé/sí</td><td>Ní bheireann</td><td>Ar mbeireann?</td></tr><tr><td>Bí</td><td>To Be</td><td>Táim/Bím<br>Tá/Bíonn sé/sí</td><td>Ní raibh</td><td>An bhfuil?<br>An mbíonn?</td></tr><tr><td>Clois</td><td>To Hear</td><td>Cloisim<br>Closieann sé/sí</td><td>Ní chloiseann</td><td>An gloiseann?</td></tr><tr><td>Déan</td><td>To Make</td><td>Déánaim<br>Déanann sé/sí</td><td>Ní dhearna</td><td>An ndeanann?</td></tr><tr><td>Faigh</td><td>To Get</td><td>Faighim<br>Faigheann sé/sí</td><td>Ní fhaigheann</td><td>An bhfaigheann?</td></tr><tr><td>Feic</td><td>To See</td><td>Feicim<br>Feiceann sé/sí</td><td>Ní fheiceann</td><td>An bhfeiceann?</td></tr><tr><td>Ith</td><td>To Eat</td><td>Ithim<br>Itheann sé/sí</td><td>Ní itheann</td><td>An itheann?</td></tr><tr><td>Tabhair</td><td>To Give</td><td>Tugaim<br>Tugann sé/sí</td><td>Ní thugann</td><td>An dtugann?</td></tr><tr><td>Tar</td><td>To Come</td><td>Tagaim<br>Tagann sé/sí</td><td>Ní thagann</td><td>Ar tháinig?</td></tr><tr><td>Téigh</td><td>To Go</td><td>Téim<br>Téann sé/sí</td><td>Ní théann</td><td>An dtéann?</td></tr></tbody></table>
+    </div>
+    `],
+        level: 1,
+        excerpt: "In Irish, the present tense, or 'Aimsir Láithreach,' reflects actions that are in the process of occuring.",
+        page: ["Irish", "Grammar"]
+      },
+      {
+        name: "An Aimsir Fháistineach (The Future Tense)",
+        data: [`
+    <h2>One syllable verbs</h2>
+    For the one syllable future tense verbs, you use <b>faidh/fidh</b> as the endings. For the we part, you use <b>faimid/fimid</b>.
+    For the negative statement, you use <b>ní + séimhiú</b>, and for the question you use an <b>an + urú</b></br>
+    For the saorbhriathar, use <b>far/fear</b>, as endings.</br>
+    </br>
+    <h2>Two syllable verbs</h2>
+    For the two syllable verbs, you remove the endings like in the present tense, and then you use <b>óimid/eoimid</b> as the endings.</br>
+    For the saorbhriathar, you use <b>ófar/eofar</b> as the endings.</br>
+    <h2>Irregular Verbs</h2>
+    There are only 11 Irish Irregular verbs, which are the same for all four tenses. </br>
+    Note: Remember to conjugate the third column as shown above with the regular rules, as this is only the mé form.      
+    <div class="table">
+    <table><thead><tr><th>Verb</th><th>Mé form</th><th>Negative</th><th>Question</th></tr></thead><tbody><tr><td>Abair</td><td>Déarfaidh</td><td>Ní déarfaidh</td><td>An ndéarfaidh?</td></tr><tr><td>Beir</td><td>Béarfaidh</td><td>Ní bhéarfaidh</td><td>An mbéarfaidh?</td></tr><tr><td>Bí</td><td>Beidh</td><td>Ní bheidh</td><td>An mbeidh?</td></tr><tr><td>Clois</td><td>Cloisfidh</td><td>Ní chloisfidh</td><td>An gcloisfidh?</td></tr><tr><td>Déan</td><td>Déanfaidh</td><td>Ní dhéanfaidh</td><td>An ndéanfaidh?</td></tr><tr><td>Faigh</td><td>Gheobhaidh</td><td>Ní bhfaighidh</td><td>An bhfaighidh?</td></tr><tr><td>Feic</td><td>Feicfidh</td><td>Ní fheicfidh</td><td>An bhfeicfidh?</td></tr><tr><td>Ith</td><td>Íosfaidh</td><td>Ní íosfaidh</td><td>An íosfaidh?</td></tr><tr><td>Tabhair</td><td>Tabhairfaidh</td><td>Ní thabharfaidh</td><td>An dtabharfaidh?</td></tr><tr><td>Tar</td><td>Tiocfaidh</td><td>Ní thiocfaidh</td><td>An thiocfaidh?</td></tr><tr><td>Téigh</td><td>Rachaidh</td><td>Ní rachaidh</td><td>An rachaidh?</td></tr></tbody></table>
+    </div>
+    `],
+        level: 2,
+        excerpt: "Looking ahead, the future tense in Irish, known as 'Aimsir Fháistineach,' allows us to express actions that are yet to happen.",
+        page: ["Irish", "Grammar"]
+      },
+      {
+        name: "An Séimhiú agus an t-urú (Lenition and Eclipsis)",
+        data: [`
+    <h2>Séimhiú</h2>
+    A séimhiú or lenition, is a special gramatical rule where you place the letter "<b>h</b>" after the first letter of a consonant.
+    The <b>séimhiú</b> is used in :</br>
+    - Prepositions</br>
+    - Numbers</br>
+    - adverbs/conjunctions</br>
+    - Possesive adjectives</br>
+    
+    <h3>Prepositions</h3>
+    The séimhiú is used in some prepositions. Here are a list:
+    Ar, De, Do, Don, Faoi, Ó, T
+
+    <h2>Urú</h2>
+      `],
+        level: 2,
+        excerpt: "Séimhiú, or lenition, is the softening of a consonant sound, typically indicated by adding an 'h' after the initial consonant. On the other hand, t-urú, or eclipsis, involves the initial consonant of a word being replaced or eclipsed by another consonant sound.",
+        page: ["Irish", "Grammar"]
+      },
+      {
+        name: "An Modh Coinníollach (The Conditional Tense)",
+        data: [`
+    The conditional tense puts a condition to any sentence. For example, the <b>would</b> in "I <b>would</b> buy a chair" would be the condition. You only add the pronouns when it is sé/sí/sibh.</br>
+    
+    <h2>One syllable verbs</h2>
+    In the Modh Coinníollach, you start by adding the rules of the aimsir chaite - the past tense onto the start of the verb.</br>
+    Then, you add the respective endings on to the verb endings as shown below. The endings need to match the caol leathan rule.</br>
+    <b>"Fainn/Finn"</b> = My </br>
+    <b>"Fá/Feá"</b> = Your </br>
+    <b>"Fadh/Feadh"</b> = His/Her </br>
+    <b>"Faimis/Fimis"</b> = Our </br>
+    <b>"Fadh/Feadh"</b> = Your(Plural) </br>
+    <b>"Faidís/Fidís"</b> = Their </br>
+    </br>
+    For the question form, you use <b>faí</b>/<b>fí</b> as the endings, and for the question, you use <b>an + urú</b>.
+
+    <h2>Two syllable verbs</h2>
+    The rules are all the same as the one syllable verbs, but different edings are added. Like the other tenses, you remove the aigh/igh and the last vowels</br>
+    Here are the endings.
+    <b>"Eoinn/Óinn"</b> = My </br>
+    <b>"Eofá/Ófa"</b> = Your </br>
+    <b>"Eodh/Ódh"</b> = His/Her </br>
+    <b>"Eoimis/Óimis"</b> = Our </br>
+    <b>"Eodh/Ódh"</b> = Your(Plural) </br>
+    <b>"Eoidís/Óidís"</b> = Their </br>
+    For the question form, you use <b>eofá</b>/<b>ófá</b> as the endings, and for the question, you use <b>eofaí</b>/<b>ófaí</b>.
+
+    <h2>Irregular verbs</h2>
+    <div class="table">
+    <table><thead><tr><th>Verb</th><th>mé</th><th>tú</th><th>sé/sí</th><th>muid</th><th>sibh</th><th>siad</th><th>S.B</th><th>Negative</th><th>?</th></tr></thead><tbody><tr><td>Abair</td><td>Déarfainn</td><td>Déarfá</td><td>Déarfadh sé/sí</td><td>Déarfaimis</td><td>Déarfadh sibh</td><td>Déarfaidís</td><td>Déarfaí</td><td>Ní déarfainn</td><td>An ndéarfá?</td></tr><tr><td>Beir</td><td>Bhéarfainn</td><td>Bhéarfá</td><td>Bhéarfadh sé/sí</td><td>Bhéarfaimis</td><td>Bhéarfadh sibh</td><td>Bhéarfaidís</td><td>Bhéarfaí</td><td>Ní bhéarfainn</td><td>An mbéarfá?</td></tr><tr><td>Bí</td><td>Bheinn</td><td>Bheifeá</td><td>Bheadh sé/sí</td><td>Bheimis</td><td>Bheadh sibh</td><td>Bheidís</td><td>Bheifí</td><td>Ní bheinn</td><td>An mbeifeá?</td></tr><tr><td>Clois</td><td>Chloisfinn</td><td>Chloisfeá</td><td>Chloisfeadh sé/sí</td><td>Chloisfimis</td><td>Chloisfeadh sibh</td><td>Chloisfidís</td><td>Chloisfí</td><td>Ní chloisfinn</td><td>An gloisfeá?</td></tr><tr><td>Déan</td><td>Dhéanfainn</td><td>Dhéanfá</td><td>Dhéanfadh sé/sí</td><td>Dhéanfaimis</td><td>Dhéanfadh sibh</td><td>Dhéanfaidís</td><td>Dhéanfaí</td><td>Ní dhéanfainn</td><td>An ndéanfá?</td></tr><tr><td>Faigh</td><td>Gheobhainn</td><td>Gheofá</td><td>Gheobhadh sé/sí</td><td>Gheobhaimis</td><td>Gheobhadh sibh</td><td>Gheobhaidís</td><td>Gheofaí</td><td>Ní bhfaighinn</td><td>An bhfaighfeá?</td></tr><tr><td>Feic</td><td>D'fheicfinn</td><td>D'fheicfeá</td><td>D'fheicfeadh sé/sí</td><td>D'fheicfimis</td><td>D'fheicfeadh sibh</td><td>D'fheicfidís</td><td>D'fheicfí</td><td>Ní fheicfinn</td><td>An bhfeicfeá?</td></tr><tr><td>Ith</td><td>D'íosfainn</td><td>D'íosfá</td><td>D'íosfadh sé/sí</td><td>D'íosfaimis</td><td>D'íosfadh sibh</td><td>D'íosfaidís</td><td>D'íosfaí</td><td>Ní íosfaí</td><td>An íosfá?</td></tr><tr><td>Tabhair</td><td>Thabharfainn</td><td>Thabharfá</td><td>Thabharfadh sé/sí</td><td>Thabharfaimis</td><td>Thabharfadh sibh</td><td>Thabharfaidís</td><td>Thabharfaí</td><td>Ní thabharfainn</td><td>An dtabharfá?</td></tr><tr><td>Tar</td><td>Thiocfainn</td><td>Thiocfá</td><td>Thiocfadh sé/sí</td><td>Thiocfaimis</td><td>Thiocfadh sibh</td><td>Thiocfaidís</td><td>Thiocfaí</td><td>Ní thiocfainn</td><td>An dtiocfá?</td></tr><tr><td>Téigh</td><td>Rachinn</td><td>Rachfá</td><td>Rachadh sé/sí</td><td>Rachaimis</td><td>Rachadh sibh</td><td>Rachaidís</td><td>Rachfaí</td><td>Ní rachainn</td><td>An rachfá?</td></tr></tbody></table>      </div>
+    `],
+        level: 3,
+        excerpt: "Modh Coinníollach (Conditional Tense) is a verb form in Irish that expresses actions or events that may happen or are dependent on certain conditions.",
+        page: ["Irish", "Grammar"]
+      },
+      {
+        name: "An Aidiacht Shealbhach (Possesive Adjectives)",
+        data: [`
+    The possesive adjective is used when you own a certain noun. For example in English the possesive adjective in, "My Bag" would be "My" because it posseses the noun "Bag" onto you.</br>
+    Unlike English though, the possesive adjective is also used when you want to show where you live. For example, "I live in Dublin" would be "Tá mé i <b>mo</b> chónaí i mBaile Átha Cliath"</br>
+    The possesive adjectives are </br>
+    <b>"Mo"</b> = My </br>
+    <b>"Do"</b> = Your </br>
+    <b>"A"</b> = His/Her </br>
+    <b>"Ár"</b> = Our </br>
+    <b>"Bhur"</b> = Your(Plural) </br>
+    <b>"A"</b> = Their </br>
+    </br>
+
+    To add a possesive adjective to a noun, you need to follow a couple of steps.</br>
+    When your noun starts with the letters <b>F, D, G, P, T, or C</b>, add an <a>urú</a></br>
+    When your noun starts with a <b>consonant</b> then add a <b>séimhiú</b> to First Person adjectives (My, Your, He, She) and add an <b>urú</b> to Third person adjectives (Our, Your(Plural), Their)</br>
+    And when your noun starts with a <b>vowel</b>, then the possesive adjective changes like this:
+    <b>"Mo"</b> = M' </br>
+    <b>"Do"</b> = D' </br>
+    <b>"A(His)"</b> = Nothing</br>
+    <b>"A(Her)"</b> = H </br>
+    <b>"Ár"</b> = Ár Urú </br>
+    <b>"Bhur"</b> = Bhur Urú </br>
+    <b>"A"</b> = A Urú </br>      
+    For example, My apple would be M'úll, and our apple would be ár n-úll`],
+        level: 2,
+        excerpt: "The Aidiacht shealbhach in Irish, also known as the possessive adjective, is a word that shows ownership or possession. It's like saying my, your, his, her, our, or their in English.",
+        page: ["Irish", "Grammar"]
+      },
+      {
+        name: "Caol agus Leathan (Slender and Broad)",
+        data: [`
+    Checking if a verb is a caol(slender) verb or a leathan(broad) verb is really important in Irish, since it is vital in conjugating any regular / irregular verb in any of the four tenses. It is also necessary to know for one of the only rules in Irish spelling: Slender with slender, broad with broad</br>
+    To do this, you first check the last vowel in a verb after you treat it.</br>
+    This means that you need to remove aigh/igh or the last vowel if it is nessasary to do so before seeing if it is caol/leathan.
+    If the verb is an <b>a, o, or u</b> then it is broad (leathan)</br>
+    If the verb is an <b>i or an e</b> then it is slender (caol)</br>
+    For example, the last vowel of "Cuir" is an i, which is slender, so "Cuir" is a Caol verb.
+    </br>
+    </br>
+    <b>Caol le Caol, Leathan le leathan (Slender with Slender, Broad with Broad)</b></br>
+    Now to talk about the elephant in the room. Caol le Caol, Leathan le leathan is basically the only good rule in Irish spelling.</br>
+    It states that vowels that go on either side of a consonant or group of consonants, must agree. So if a caol vowel is on one side of a consonant, and a leathan vowel is on another, you've made a spelling mistake.
+    This is an amazing indicator for when you're looking for spelling mistakes.
+    `],
+        level: 1,
+        excerpt: "The Aidiacht shealbhach in Irish, also known as the possessive adjective, is a word that shows ownership or possession. It's like saying my, your, his, her, our, or their in English.",
+        page: ["Irish", "Grammar"]
+      },
+      {
+        name: "Na Briathra neamhrialta (Irregular Verbs)",
+        data: [`
+    This is a list of irregular verbs in all four tenses.
+    <h2>An Aimsir Chaite - The Past Tense</h2>
+    <div class="table">
+    <table><thead><tr><th>Verb</th><th>English</th><th>"Mé" form</th><th>Negative</th><th>Question</th></tr></thead><tbody><tr><td>Abair</td><td>To Say</td><td>Dúirt mé</td><td>Ní dúirt</td><td>An ndúirt?</td></tr><tr><td>Beir</td><td>To Catch</td><td>Rug mé</td><td>Níor rug</td><td>Ar rug?</td></tr><tr><td>Bí</td><td>To Be</td><td>Bhí mé</td><td>Ní raibh</td><td>An raibh?</td></tr><tr><td>Clois</td><td>To Hear</td><td>Chuala mé</td><td>Níor chuala</td><td>Ar chuala?</td></tr><tr><td>Déan</td><td>To Make</td><td>Rinne mé</td><td>Ní dhearna</td><td>An ndearna?</td></tr><tr><td>Faigh</td><td>To Get</td><td>Fuair mé</td><td>Ní bhfuair</td><td>An bhfuair?</td></tr><tr><td>Feic</td><td>To See</td><td>Chonaic mé</td><td>Ní fhaca</td><td>An bhfaca?</td></tr><tr><td>Ith</td><td>To Eat</td><td>D'ith mé</td><td>Níor ith</td><td>Ar ith tú?</td></tr><tr><td>Tabhair</td><td>To Give</td><td>Thug mé</td><td>Níor thug</td><td>Ar thug tú?</td></tr><tr><td>Tar</td><td>To Come</td><td>Thánig mé</td><td>Níor tháinig</td><td>Ar tháinig tú</td></tr><tr><td>Téigh</td><td>To Go</td><td>Chuaigh mé</td><td>Ní dheachaidh</td><td>An ndeachaigh?</td></tr></tbody></table>
+    </div>
+    <h2>An Aimsir Láithreach - The Present Tense</h2>
+    <div class="table">
+    <table><thead><tr><th>Verb</th><th>English</th><th>"Mé/Sé/Sí" form</th><th>Negative</th><th>Question</th></tr></thead><tbody><tr><td>Abair</td><td>To Say</td><td>Deirim<br>Deir sé/sí</td><td>Ní deir</td><td>An ndeir?</td></tr><tr><td>Beir</td><td>To Catch</td><td>Beirim<br>Beireann sé/sí</td><td>Ní bheireann</td><td>Ar mbeireann?</td></tr><tr><td>Bí</td><td>To Be</td><td>Táim/Bím<br>Tá/Bíonn sé/sí</td><td>Ní raibh</td><td>An bhfuil?<br>An mbíonn?</td></tr><tr><td>Clois</td><td>To Hear</td><td>Cloisim<br>Closieann sé/sí</td><td>Ní chloiseann</td><td>An gloiseann?</td></tr><tr><td>Déan</td><td>To Make</td><td>Déánaim<br>Déanann sé/sí</td><td>Ní dhearna</td><td>An ndeanann?</td></tr><tr><td>Faigh</td><td>To Get</td><td>Faighim<br>Faigheann sé/sí</td><td>Ní fhaigheann</td><td>An bhfaigheann?</td></tr><tr><td>Feic</td><td>To See</td><td>Feicim<br>Feiceann sé/sí</td><td>Ní fheiceann</td><td>An bhfeiceann?</td></tr><tr><td>Ith</td><td>To Eat</td><td>Ithim<br>Itheann sé/sí</td><td>Ní itheann</td><td>An itheann?</td></tr><tr><td>Tabhair</td><td>To Give</td><td>Tugaim<br>Tugann sé/sí</td><td>Ní thugann</td><td>An dtugann?</td></tr><tr><td>Tar</td><td>To Come</td><td>Tagaim<br>Tagann sé/sí</td><td>Ní thagann</td><td>Ar tháinig?</td></tr><tr><td>Téigh</td><td>To Go</td><td>Téim<br>Téann sé/sí</td><td>Ní théann</td><td>An dtéann?</td></tr></tbody></table>
+    </div>
+    <h2>An Aimsir Fháistineach - The Future Tense</h2>
+    <div class="table">
+    <table><thead><tr><th>Verb</th><th>Mé form</th><th>Negative</th><th>Question</th></tr></thead><tbody><tr><td>Abair</td><td>Déarfaidh</td><td>Ní déarfaidh</td><td>An ndéarfaidh?</td></tr><tr><td>Beir</td><td>Béarfaidh</td><td>Ní bhéarfaidh</td><td>An mbéarfaidh?</td></tr><tr><td>Bí</td><td>Beidh</td><td>Ní bheidh</td><td>An mbeidh?</td></tr><tr><td>Clois</td><td>Cloisfidh</td><td>Ní chloisfidh</td><td>An gcloisfidh?</td></tr><tr><td>Déan</td><td>Déanfaidh</td><td>Ní dhéanfaidh</td><td>An ndéanfaidh?</td></tr><tr><td>Faigh</td><td>Gheobhaidh</td><td>Ní bhfaighidh</td><td>An bhfaighidh?</td></tr><tr><td>Feic</td><td>Feicfidh</td><td>Ní fheicfidh</td><td>An bhfeicfidh?</td></tr><tr><td>Ith</td><td>Íosfaidh</td><td>Ní íosfaidh</td><td>An íosfaidh?</td></tr><tr><td>Tabhair</td><td>Tabhairfaidh</td><td>Ní thabharfaidh</td><td>An dtabharfaidh?</td></tr><tr><td>Tar</td><td>Tiocfaidh</td><td>Ní thiocfaidh</td><td>An thiocfaidh?</td></tr><tr><td>Téigh</td><td>Rachaidh</td><td>Ní rachaidh</td><td>An rachaidh?</td></tr></tbody></table>
+    </div>
+    <h2>An Modh Coinníollach - The Conditional Tense</h2>
+    <div class="table">
+    <table><thead><tr><th>Verb</th><th>mé</th><th>tú</th><th>sé/sí</th><th>muid</th><th>sibh</th><th>siad</th><th>S.B</th><th>Negative</th><th>?</th></tr></thead><tbody><tr><td>Abair</td><td>Déarfainn</td><td>Déarfá</td><td>Déarfadh sé/sí</td><td>Déarfaimis</td><td>Déarfadh sibh</td><td>Déarfaidís</td><td>Déarfaí</td><td>Ní déarfainn</td><td>An ndéarfá?</td></tr><tr><td>Beir</td><td>Bhéarfainn</td><td>Bhéarfá</td><td>Bhéarfadh sé/sí</td><td>Bhéarfaimis</td><td>Bhéarfadh sibh</td><td>Bhéarfaidís</td><td>Bhéarfaí</td><td>Ní bhéarfainn</td><td>An mbéarfá?</td></tr><tr><td>Bí</td><td>Bheinn</td><td>Bheifeá</td><td>Bheadh sé/sí</td><td>Bheimis</td><td>Bheadh sibh</td><td>Bheidís</td><td>Bheifí</td><td>Ní bheinn</td><td>An mbeifeá?</td></tr><tr><td>Clois</td><td>Chloisfinn</td><td>Chloisfeá</td><td>Chloisfeadh sé/sí</td><td>Chloisfimis</td><td>Chloisfeadh sibh</td><td>Chloisfidís</td><td>Chloisfí</td><td>Ní chloisfinn</td><td>An gloisfeá?</td></tr><tr><td>Déan</td><td>Dhéanfainn</td><td>Dhéanfá</td><td>Dhéanfadh sé/sí</td><td>Dhéanfaimis</td><td>Dhéanfadh sibh</td><td>Dhéanfaidís</td><td>Dhéanfaí</td><td>Ní dhéanfainn</td><td>An ndéanfá?</td></tr><tr><td>Faigh</td><td>Gheobhainn</td><td>Gheofá</td><td>Gheobhadh sé/sí</td><td>Gheobhaimis</td><td>Gheobhadh sibh</td><td>Gheobhaidís</td><td>Gheofaí</td><td>Ní bhfaighinn</td><td>An bhfaighfeá?</td></tr><tr><td>Feic</td><td>D'fheicfinn</td><td>D'fheicfeá</td><td>D'fheicfeadh sé/sí</td><td>D'fheicfimis</td><td>D'fheicfeadh sibh</td><td>D'fheicfidís</td><td>D'fheicfí</td><td>Ní fheicfinn</td><td>An bhfeicfeá?</td></tr><tr><td>Ith</td><td>D'íosfainn</td><td>D'íosfá</td><td>D'íosfadh sé/sí</td><td>D'íosfaimis</td><td>D'íosfadh sibh</td><td>D'íosfaidís</td><td>D'íosfaí</td><td>Ní íosfaí</td><td>An íosfá?</td></tr><tr><td>Tabhair</td><td>Thabharfainn</td><td>Thabharfá</td><td>Thabharfadh sé/sí</td><td>Thabharfaimis</td><td>Thabharfadh sibh</td><td>Thabharfaidís</td><td>Thabharfaí</td><td>Ní thabharfainn</td><td>An dtabharfá?</td></tr><tr><td>Tar</td><td>Thiocfainn</td><td>Thiocfá</td><td>Thiocfadh sé/sí</td><td>Thiocfaimis</td><td>Thiocfadh sibh</td><td>Thiocfaidís</td><td>Thiocfaí</td><td>Ní thiocfainn</td><td>An dtiocfá?</td></tr><tr><td>Téigh</td><td>Rachinn</td><td>Rachfá</td><td>Rachadh sé/sí</td><td>Rachaimis</td><td>Rachadh sibh</td><td>Rachaidís</td><td>Rachfaí</td><td>Ní rachainn</td><td>An rachfá?</td></tr></tbody></table>       
+    </div>
+    `],
+        level: 1,
+        excerpt: "There are 11 irregular verbs to remember in Irish, which change the root depending on the tense.",
+        page: ["Irish", "Grammar"]
+      },
+      {
+        name: "Bisecting an angle",
+        data: [`
+    <b>Step 1.</b> Place the compass point on the angle's vertex</br>
+    <b>Step 2.</b> Draw an arc from the vertex so it makes contact with both lines of the angle</br>
+    <b>Step 3.</b> Point the compass on the points where the arc makes contact with the lines</br>
+    <b>Step 4.</b> Draw an arc from the points</br><b>Step 5.</b> Join the vertex and where the two arcs meet with a line.</br></br>Move the mouse in the demo below to see how a line is bisected`,
+          `canvas|angle|false|500,500|[50, 200, true, true]`,
+          `<div class="label">Fig 1: The bisection</div>
+    `],
+        level: 1,
+        excerpt: "Bisecting an angle with a compass and a ruler/set square.",
+        page: ["Technical Graphics"]
+      },
+      {
+        name: "Na Contaetha (The Counties)",
+        data: [`
+    Here is a table of all of the counties
+    <div class="table">
+    <table><tbody><tr><td width="145"><strong>Connacht</strong></td><td width="145"><strong>Leinster</strong></td><td width="145"><strong>Munster</strong></td><td width="145"><strong>Ulster</strong></td></tr><tr><td width="145">Galway &ndash;<strong>Gaillimh</strong></td><td width="145">Dublin &ndash;<strong>Baile &Aacute;tha Cliath</strong></td><td width="145">Kerry &ndash;<strong>Ciarrai</strong></td><td width="145">Antrim &ndash;<strong>Antroim</strong></td></tr><tr><td width="145">Leitrim &ndash;<strong>Liatroim</strong></td><td width="145">Carlow &ndash;<strong>Ceatharlach</strong></td><td width="145">Clare &ndash;<strong>Cl&aacute;r</strong></td><td width="145">Armagh &ndash;<strong>Ard Mhaca</strong></td></tr><tr><td width="145">Mayo &ndash;<strong>Meigh Eo</strong></td><td width="145">Offaly &ndash;<strong>&Uacute;ibh Fhail&iacute;</strong></td><td width="145">Cork &ndash;<strong>Corcaigh</strong></td><td width="145">Cavan &ndash;<strong>An cabh&aacute;n</strong></td></tr><tr><td width="145">Roscommon &ndash;<strong>Ros com&aacute;in</strong></td><td width="145">Meath &ndash;<strong>An Mh&iacute;</strong></td><td width="145">Limerick &ndash;<strong>Luimneach</strong></td><td width="145">Derry &ndash;<strong>Doire</strong></td></tr><tr><td width="145">Sligo &ndash;<strong>Sligeach</strong></td><td width="145">Louth &ndash;<strong>An L&uacute;</strong></td><td width="145">Waterford &ndash;<strong>Port L&aacute;irge</strong></td><td width="145">Down &ndash;<strong>An D&uacute;n </strong></td></tr><tr><td width="145">&nbsp;</td><td width="145">Laois &ndash;<strong>Laois</strong></td><td width="145">Tipperary &ndash;<strong>Tiobraid &Aacute;rann</strong></td><td width="145">Donegal &ndash;<strong>D&uacute;n na nGall</strong></td></tr><tr><td width="145">&nbsp;</td><td width="145">West Meath &ndash;<strong>An Iarmh&iacute; </strong></td><td width="145">&nbsp;</td><td width="145">Fermanagh &ndash;<strong>Fear Manach</strong></td></tr><tr><td width="145"><strong>&nbsp;</strong></td><td width="145">Wicklow &ndash;<strong>Cill Mhant&aacute;in</strong></td><td width="145">&nbsp;</td><td width="145">Monaghan &ndash;<strong>Muineach&aacute;n</strong></td></tr><tr><td width="145"><strong>&nbsp;</strong></td><td width="145">Kildare &ndash;<strong>Cill Dara</strong></td><td width="145">&nbsp;</td><td width="145">Tyrone &ndash;<strong>T&iacute;r Eoghain</strong></td></tr><tr><td width="145"><strong>&nbsp;</strong></td><td width="145">KilKenny &ndash;<strong>Chill Chainnigh</strong></td><td width="145">&nbsp;</td><td width="145">&nbsp;</td></tr></tbody></table>
+    </div>
+    `],
+        level: 1,
+        excerpt: "A list of all 32 counties in Irish.",
+        page: ["Irish", "Vocabulary"]
+      },
+      {
+        name: "An Aidiachhtaí (Adjectives)",
+        data: [`
+    A list of a couple of adjectives in Irish
+    <div class="table">
+    <table><tbody><tr><td width="145">Br&oacute;d&uacute;il</td><td width="145">Proud</td><td width="145">D&iacute;ograiseach</td><td width="145">Diligent</td></tr><tr><td width="145">Cabhrach</td><td width="145">Helpful</td><td width="145">Eagraithe</td><td width="145">Organised</td></tr><tr><td width="145">Cairdi&uacute;il</td><td width="145">Friendly</td><td width="145">&Eacute;irimi&uacute;il</td><td width="145">Intelligent</td></tr><tr><td width="145">Cr&oacute;ga</td><td width="145">Brave</td><td width="145">Tuisceanach</td><td width="145">Understanding</td></tr><tr><td width="145">Cumasach</td><td width="145">Talented</td><td width="145">M&iacute;mhac&aacute;nta</td><td width="145">Dishonest</td></tr><tr><td width="145">Cliste</td><td width="145">Clever</td><td width="145">Uaigneach</td><td width="145">Lonely</td></tr><tr><td width="145">Cine&aacute;lta</td><td width="145">Kind</td><td width="145">Teasa&iacute;</td><td width="145">Bad tempered</td></tr><tr><td width="145">D&iacute;lis</td><td width="145">Faithful</td><td width="145">Spreagtha</td><td width="145">Inspiring</td></tr></tbody></table>
+    </div>
+    `],
+        level: 1,
+        excerpt: "A short list of 32 important adjectives in Irish.",
+        page: ["Irish", "Vocabulary"]
+      },
+      {
+        name: "An Daitheanna (The Colours)",
+        data: [`
+      This table provides each basic Irish colour with its English translation. Take a look below: </br>
+      <div class="table">
+      <table>
+      <tbody>
+      <tr>
+      <td width="145" style="background: red">
+      Dearg
+      </td>
+      <td width="145" >
+      Red
+      </td>
+      <td width="145" style="background: purple">
+      Corcra
+      </td>
+      <td width="145">
+      Purple
+      </td>
+      </tr>
+      <tr>
+      <td width="145" style="background: orange">
+      Or&aacute;iste
+      </td>
+      <td width="145">
+      Orange
+      </td>
+      <td width="145" style="background: pink"> 
+      B&aacute;ndearg
+      </td>
+      <td width="145">
+      Pink
+      </td>
+      </tr>
+      <tr>
+      <td width="145" style="background: yellow">
+      Bu&iacute
+      </td>
+      <td width="145">
+      Yellow
+      </td>
+      <td width="145" style="background: gray">
+      Liath
+      </td>
+      <td width="145">
+      Grey
+      </td>
+      </tr>
+      <tr>
+      <td width="145" style="background: green">
+      Glas
+      </td>
+      <td width="145">
+      <p>Green
+      </td>
+      <td width="145">
+      <p>B&aacute;n
+      </td>
+      <td width="145">
+      <p>White
+      </td>
+      </tr>
+      <tr>
+      <td width="145" style="background: blue">
+      Gorm
+      </td>
+      <td width="145">
+      Blue
+      </td>
+      <td width="145" style="background: brown">
+      Donn
+      </td>
+      <td width="145">
+      Brown
+      </td>
+      </tr>
+      <tr>
+      <td width="145" style="background: black; color:white">
+      Dubh
+      </td>
+      <td width="145">
+      Black
+      </td>
+      <td width="145">
+      ildaite
+      </td>
+      <td width="145">
+      Multi-coloured
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+      Notes: Some colours have special words according to the context. Dearg is red, but to describe hair, you use the word rua. E.g. Tá gruaig rua aici: She has red hair. Green on the Irish flag also has a special name. Uaine.`
+        ],
+        level: 1,
+        excerpt: "A short list of 24 colours/colour related words in Irish.",
+        page: ["Irish", "Vocabulary"]
+      },
+      {
+        name: "Briathair (Verbs)",
+        data: [`
+    Here is a list of verbs before it is being conjugated.</br>
+    <div class="table">
+    <table><tbody><tr><td width="194">Bac (le) – To bother (with)</td><td width="194">Díol – to sell</td><td width="194">Meas – to think</td></tr><tr><td width="194">Bearr – to cut/ shave</td><td width="194">Dún – to close</td><td width="194">Mill – to destroy/rúin</td></tr><tr><td width="194">Béic – to shout</td><td width="194">Éist – to listen</td><td width="194">Mol – to praise/recommend</td></tr><tr><td width="194">Blais – to taste</td><td width="194">Fág – to leave</td><td width="194">Múin – to teah</td></tr><tr><td width="194">Bog – to move</td><td width="194">Fan – to wait</td><td width="194">Ól – to drink</td></tr><tr><td width="194">Braith – to feel</td><td width="194">Fás – to grow</td><td width="194">Póg – to kiss</td></tr><tr><td width="194">Bris – to break</td><td width="194">Féach ar – to look at</td><td width="194">Pós – to marry</td></tr><tr><td width="194">Buaigh – to win</td><td width="194">Fill – to return</td><td width="194">Preab – to jump</td></tr><tr><td width="194">Buail le – to meet</td><td width="194">Glan – to clean</td><td width="194">Saor – to free</td></tr><tr><td width="194">Buail – to hit/strike</td><td width="194">Gléas – to dress</td><td width="194">Scaoil – to release</td></tr><tr><td width="194">Caill – to lose</td><td width="194">Goid – to steal</td><td width="194">Scread – to scream</td></tr><tr><td width="194">Caith – to wear/spend</td><td width="194">Iarr – to ask</td><td width="194">Scríobh – to write</td></tr><tr><td width="194">Can - to sing</td><td width="194">Íoc – to pay</td><td width="194">Seol – to send</td></tr><tr><td width="194">Caoin – to cry</td><td width="194">Las – to light</td><td width="194">Seinn – to play (an instrument)</td></tr><tr><td width="194">Cas – to turn</td><td width="194">Lean – to follow</td><td width="194">Stad – to stop</td></tr><tr><td width="194">Ceap – to think</td><td width="194">Léim – to jump</td><td width="194">Troid – to fight</td></tr><tr><td width="194">Cnag – to knock</td><td width="194">Lig – to allow</td><td width="194">Tit – to fall</td></tr><tr><td width="194">Creid – to believe</td><td width="194">Lion – to fill</td><td width="194">Tuig – to understand</td></tr><tr><td width="194">Cuir – to put</td><td width="194">Mair – to last/live</td><td width="194">Úsáid – to use</td></tr></tbody></table>
+    </div>
+    `],
+        level: 1,
+        excerpt: `A list of 57 verb roots in Irish.`,
+        page: ["Irish", "Vocabulary"]
+      },
+
+
+      // ================
+      // History
+      // ================
+
+      {
+        name: "The Historian",
+        data: [`
+    <p>The historian tries to gather as much information as possible from different sources. Here are some key words associated with the historian.</p>
+    <table>
+    <tbody>
+    <tr>
+    <td width="73">
+    <strong>word</strong>
+    </td>
+    <td width="508">
+    <strong>meaning</strong>
+    </td>
+    </tr>
+    <tr>
+    <td width="73">
+    <strong>archive</strong>
+    </td>
+    <td width="508">
+    An archive is a place that catalogues and stores a collection of written and other sources
+    </td>
+    </tr>
+    <tr>
+    <td width="73">
+    <strong>museum</strong>
+    </td>
+    <td width="508">
+    A museum is a place that collets and displays objects for public education and appreciation
+    </td>
+    </tr>
+    <tr>
+    <td width="73">
+    <strong>primary source</strong>
+    </td>
+    <td width="508">
+    A primary source is a firsthand account from the time of the event
+    </td>
+    </tr>
+    <tr>
+    <td width="73">
+    <strong>Secondary source</strong>
+    </td>
+    <td width="508">
+    A secondary source is a source from a later date after the time of the event.
+    </td>
+    </tr>
+    <tr>
+    <td width="73">
+    <strong>Artefact</strong>
+    </td>
+    <td width="508">
+    An artefact is any human-made object (Primary source)
+    </td>
+    </tr>
+    <tr>
+    <td width="73">
+    <strong>Autobiography</strong>
+    </td>
+    <td width="508">
+    An account of someone’s life written by themselves (Primary source)
+    </td>
+    </tr>
+    <tr>
+    <td width="73">
+    <strong>Handling box</strong>
+    </td>
+    <td width="508">
+    A box that contains replicas of objects (Secondary source)
+    </td>
+    </tr>
+    <tr>
+    <td width="73">
+    <strong>Census</strong>
+    </td>
+    <td width="508">
+    A survey that is conducted by the state about the population (Primary source)
+    </td>
+    </tr>
+    <tr>
+    <td width="73">
+    <strong>cross checking</strong>
+    </td>
+    <td width="508">
+    Cross checking is where more than one source is used to make sure the information is correct
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+    `],
+        test: [
+          "Write the words with these meanings",
+          {
+            question: "A survey that is conducted by the state about the population",
+            answers: ["census"]
+          },
+          {
+            question: "A source from a later date after the time of the event",
+            answers: ["secondary source"]
+          },
+          {
+            question: "A box that contains replicas of objects",
+            answers: ["handling box"]
+          }
+        ],
+        page: ["History"]
+      },
+      {
+        name: "The Archaeologist",
+        data: [`
+    <p>An archaeologist studies the remains left by people in the past. When an archaeologist digs the remains up left by people in the past is known as an <strong>excavation</strong>.</p>
+    <p>Here are different skills and methods used by archaeologists.</p>
+    <li><strong>Geophysical Surveying</strong><br /> Taking an X-ray of the ground to see what is under the ground without excavation</li>
+    <li><strong>Pollen Analysis</strong><br /> You can see what was growing at a certain time period by looking at pollen remains. You compare the pollen found, with a list of what type of pollen was common in a certain era, you can get a rough estimate of the period when a nearby forest was cleared / when farming began.</li>
+    <li><strong>Carbon-14 dating (Radio-carbon dating)</strong><br /> Due to the short half life of carbon-14, if you measure the amount of carbon-14 in an artefact you can see how old it is. Every living thing contains carbon-14, so if you take any dead animal/plant, you can see how old it is.</li>
+    <li><strong>Stratigraphy</strong><br /> Stratigraphy dates artefacts based on how deep underground the artefact was found in. The deeper they are, the older they will be since a small amount of soil covers up that location over time. The layers of soil is called <strong>strata</strong>, hence the name “stratigraphy”.</li>
+    <li><strong>Dendrochronology<br /> </strong>Dendrochronology is a method of dating that uses the growth patterns of tree rings as a guide to see how old a tree is.</li>
+    `],
+        test: [
+          "Write the words with these meanings",
+          {
+            question: "Taking an X-ray of the ground to see what is under the ground without excavation",
+            answers: ["Geophysical Surveying"]
+          },
+          {
+            question: "The layers of soil",
+            answers: ["Strata"]
+          },
+          {
+            question: "Method of dating to see how old a tree is",
+            answers: ["Dendrochronology"]
+          },
+          {
+            question: "Method of dating to see how old an artifact is, by looking at the amount of carbon 14 in it",
+            answers: ["Carbon-14 dating"]
+          }
+        ],
+        page: ["History"]
+      },
+      {
+        name: "Ancient Ireland",
+        data: [`
+    <p>The <strong>stone</strong>, (Mesolithic and Neolithic periods) and <strong>bronze age</strong> are the prehistoric (before recorded history) eras of Ireland. The Iron age had a writing system called “<strong>Ogham</strong>”.</p>
+    <p>The first people arrived in Ireland during the Mesolithic era. They were hunter-gatherers who used stone weapons and tools. They moved as the heard of prey moved, and cremated their dead. <br /> During the Neolithic period, they started farming, and they no-longer had a need for living nomadic lives and started living in permanent houses (which were made of <strong>wattle and daub</strong>, sticks woven together and covered with a mixture of mud, dung, sand and straw) , farmed crops and reared animals for food. They built tombs for the dead, known as passage tombs, portal dolmens and court cairns.</p>
+
+    <p>In the Bronze age, metal tools and weapons became common. People lived in larger houses and graves became smaller.</p>
+    <p>The Iron Age brought the Celts to Ireland. They were much more organized, with a proper social hierarchy. Their culture and systems dominated until the arrival of Christianity in Ireland.</p>
+    `],
+        test: [
+          "Write the words with these meanings",
+          {
+            question: "The writing system in the iron age",
+            answers: ["Ogham"]
+          },
+          {
+            question: "The group of people that arrived with the iron age",
+            answers: ["Celts"]
+          },
+          {
+            question: "The name for the early stone age",
+            answers: ["Mesolithic"]
+          },
+          {
+            question: "The name for the late stone age",
+            answers: ["Neolithic"]
+          }
+        ],
+        page: ["History"]
+      },
+      {
+        name: "Early Christian Ireland",
+        data: [`
+    <p>Early Christian Ireland was the period when Christianity first came to Ireland from a bishop named Palladius in AD 431. Before this, people in Ireland were <strong>pagan</strong> meaning that they believed in more than one God. The most famous bishop to travel to Ireland was St. Patrick who was in Ireland between AD 432 and AD 461.</p>
+    <p>Many monasteries were built from sixth century and on (E.g., Inis Mór - The First ever monastery founded in Ireland by St Enda, Clonard, Kells, Clonmacnoise, Glendalough, Sceilig Mhichil).</p>
+    <p>There are a lot of different types of monastery buildings. Here is a list of the different types.</p>
+    <li><strong>Beehive Hut</strong><br /> Small stone huts shaped like a beehive, where monks slept.</li>
+    <li><strong>Oratories</strong><br /> Where the monk attended mass or prayed</li>
+    <li><strong>Scriptorium<br /> </strong>Where manuscripts were copied by hand and illustrated</li>
+    <li><strong>Refectory<br /> </strong>Where monks ate their meals</li>
+    <li><strong>Round tower<br /> </strong>A safe place for people and treasure when the monastery was under attack</li>
+    <p>A large variety of art was created by the monks. They included chalices, brooches, cups and crosses. They decorated each object with gold <strong>filigree work</strong> and enamel. A good example of an art piece from this time is <strong>Ardagh Chalice</strong> is a chalice in the National Museum of Ireland.</p>
+    <p>The Vikings who came in longships, began to raid and settle in Ireland in 8<sup>th</sup> century AD. A Longphort – a Viking camp by the water for raids – was found in wood Quay in Dublin.</p>
+    `],
+        page: ["History"]
+      },
+      {
+        name: "Ancient Rome",
+        data: [`
+    <p>Rome was the most powerful empire in the ancient world, and it arose from a cluster of small villages on the Tiber.</p>
+    <p>There were patricians and plebians in Roman society. Patricians were wealthy and lived in a <strong>domus</strong> and owned many slaves. When a slave was freed after years of service, it was called <strong>Manumission</strong>. A domus has a wide variety of rooms, for example…</p>
+    <li><strong>The Atrium</strong><br /> Where the guests met</li>
+    <li><strong>Impulvium<br /> </strong>Pool that collected rainwater</li>
+    <li><strong>Lalarium<br /> </strong>A shrine to the family Gods.</li>
+    <p>Plebians on the other hand, had a poorer lifestyle and lived in an <strong>insulae</strong>. They made up the majority of the population. They were paid with the <strong>Dole</strong>, which was free grain.</p>
+    <p>Romans enjoyed many forms of entertainment, like public baths, gladiator fights, theatre and chariot racing. In a typical Roman public bath, they would have a <strong>frigidarium</strong> which was the cold-water bath, the <strong>tepidarium</strong>, a medium heat room and a <strong>caldarium</strong> which was a hot room, much like a sauna.</p>
+    <p>In the Roman army, men signed up for 25 years to fight. Individual soldiers were called <strong>legionaries</strong> and together they made up a legion. The soldiers were not only employed to fight, but they often built public infrastructure like aqueducts and roads.</p>
+    <p>The Romans believed in a multitude of different Gods as they were pagan. Christianity was initially persecuted by the Romans, until it became the official religion of Rome.</p>
+    <p>Although Rome has made achievements that still exist in our society, like the calendar, and Rome became the foundation of Western society, Rome’s success was built on conquest and slavery.</p>
+    `],
+        page: ["History"]
+      },
+      {
+        name: "Life and Death in the medieval times",
+        data: [`
+    <p>People lived in a feudal system in the Middle Ages, meaning that the social hierarchy was very strict with most of the population being peasants. Houses for peasants were made of wood, and towns imposed <strong>curfews</strong>, which meant that people had to extinguish fires at sundown.</p>
+    <p>The craftsmen of each town set up <strong>guilds</strong>, which was an organisation of people working for the same trade/skill. Apprentices who worked for a master craftsman had to create a <strong>masterpiece</strong> to seek approval from a guild to see if he was worthy to be a master craftsman.</p>
+    <p>Religion was central in peoples lives and the Pope was Europe’s most powerful ruler. Europe was often called <strong>Christendom</strong>. Bishops and monasteries became very wealthy. A monk had to live his life according to the <strong>Rule of St Benedict</strong>, which was the strict set of rules he had to live by. Some monks called <strong>friars</strong> lived among people to help them. Churches had two types. <strong>Romanesque</strong> and <strong>Gothic</strong>. Gothic churches had larger windows, higher ceilings and narrower pillars when compared to the Romanesque one.<br /> Becoming a knight was difficult and you followed these steps</p>
+    <ol>
+    <li><strong>Page</strong><br /> At the age of 7, boys would be taught how to ride a horse, use a sword, manners etc.</li>
+    <li><strong>Squire</strong><br /> Aged 14, a boy would learn how to fight horseback and would accompany the lord in battle.</li>
+    <li><strong>Knight</strong><br /> At age 21, a knight would swear the <strong>oath of chivalry</strong> to protect the poor and weak and stay loyal to his lord.</li>
+    </ol>
+    <p>A town needed a charter from the king, a contract where the town was granted freedom to run its own affairs.</p>
+    <p>A manor usually had a mill, blacksmith and a house for the <strong>bailiff</strong> – the man who ruled instead of the lord, to collect taxes and keeping the law/order.</p>
+    <p>People used an <strong>open field system</strong> for farming, which meant that the land for crops were separated into three fields. They left one field <strong>fallow</strong>, empty for one year so that the soil could recover its nutrients. A fourth filed was called <strong>the commons</strong>, where they grazed animals. Freemen, which was a form of peasant had to pay a <strong>tithe</strong> to the priest, which was 10% of their income. Serfs, which were another form of peasants, which were practically owned by their lord, and only had rights to own a small piece of land to farm and build a house on.</p>
+    `],
+        page: ["History"]
+      },
+      {
+        name: "Medieval Ireland",
+        data: [`
+    <p>The Middle Ages in Ireland had a lot of conflict, as the Vikings and the Normans came into Ireland and had a huge impact.<br /> The Vikings raided Irish monasteries in the 790s. From the 840s they were building settlements along the coasts and rivers. Dublin was the largest settlement.</p>
+    <p>In 1169, the Normans invaded to restore the former king of Leinster, Dermot MacMurrough. They defeated the Vikings and the Gaelic Irish, and tried to conquer the rest of the country. The Normans built castles and towns and introduced the English <strong>common laws</strong> to replace the Irish <strong>Brehon laws</strong> and family names into Ireland. Dublin Castle was the centre of Dublin’s life, and the area around Dublin became known as <strong>the Pale</strong>, and it was under direct control of the English King. The Normas that adopted into Irish cultures and married into Irish families became known as the <strong>Anglo-Irish</strong>.</p>
+    `],
+        page: ["History"]
+      },
+      {
+        name: "The Renaissance",
+        data: [`
+    <p>The renaissance was a Golden age in History that started in Italy. Many inventions and different inventions were made during this period. Here are the causes of the Renaissance.</p>
+    <li><strong>The Ruins of the Roman Empire</strong><br /> People had easy access to ancient works from the Roman times, and especially in Italy, since the language is based off of Latin, the official language of Rome, people could understand ancient texts and achievements of their ancestors</li>
+    <li><strong>The Fall of Constantinople<br /> </strong>Constantinople fell in 1453, meaning that a lot of Greek scholars fled into Italy, which made ancient Greek and Roman manuscripts from the ancient world spread into Italy.</li>
+    <li><strong>Wealth<br /> </strong>Italy’s geographical positioning in the Mediterranean, meant that it accumulated a lot of wealth over the years that could be spent on art and architecture.</li>
+    <li><strong>New Ideas<br /> </strong>Different ideas on mathematics spread from the east into Italy with the trade route they had.</li>
+    <li><strong>Patrons<br /> </strong>A <strong>patron</strong> is a wealthy person that commissioned artists to make art for them. There was a high demand for good art because of the large amount of wealthy people that wanted to display their wealth in a physical form, which lead to there being more competition among artists.</li>
+    <li><strong>Competition<br /> </strong>Italy was divided into smaller city states back then, which meant different states will compare on their artistic/scientific advancements. A good example of this is Florence. Florence was the wealthiest city in Italy, and was ruled by the <strong>de Medici</strong> family, within the family, <strong>Lorenzo de Medici</strong> spent almost all of their family savings on sponsoring artists.</li>
+    <p>Changes in Art</p>
+    <p>Different ways to tackle hyper-realism in art was developed during the Renaissance, like <strong>Sfumato</strong>, which is a unique way to blur/smudge lines to add shadows, and <strong>perspective</strong>, which added depth to the paintings. <strong>Anatomy</strong> advanced during this era, which meant that people understood the human body better. People drew on canvases, or with wet wax on walls, which was called <strong>fresco</strong>.</p>
+    <h2>Discoveries</h2>
+    <p>People during this time began to question the commonly accepted beliefs from the Middle Ages, and they made many important discoveries in the fields of medicine and science. Some of the achievements of this time are</p>
+    <li><strong>Galileo Galilei</strong> proved that the Earth orbited around the sun based off of Copernicus’s work, which brought conflict with the Catholic Church and was convicted of <strong>heresy</strong>.</li>
+    <li><strong>William Harvey</strong> discovered circulation - that the heart pumped blood around the body</li>
+    <li><strong>Ambroise Par</strong><strong>é</strong> discovered ointment, an effective way to treat germs</li>
+    <p>Inventions<strong><br /> The printing press</strong> was the single most important invention during the Renaissance, invented by Gutenberg. This meant that books could be cheaply bought, which lead to more people learning how to read/write. The public was introduced to different ideas, and people started to read for entertainment. The use of Latin declined, as books began to be written in the <strong>vernacular</strong>. Ideas like <strong>Humanism</strong>, also spread where human beings are at the centre of everything.</p>
+    `],
+        page: ["History"]
+      },
+
+      // ================
+      // Science
+      // ================
+      {
+        name: "Measurement",
+        data: [`
+    <p>All scientists use the international system of measurement, <strong>SI</strong>, also known as the metric system. Here is a list of the basic units of measurements</p>
+    <ul>
+    <li>The standard unit for length is the metre(m), where 1 metre is 100 centimetres or 1000 millimetres.</li>
+    <li>The standard unit for mass is the kilogram(kg), where 1 kilogram is 1000 grams, or the mass of 1 litre of water.</li>
+    <li>The standard unit for area is the metre squared(m<sup>2</sup>), where 1 metre squared is 10000 centimetres squared.</li>
+    <li>The standard unit for volume is the cubic metre(m<sup>3</sup>), where 1 cubic metre is 1000000 cubic centimetres.</li>
+    <li>The standard unit for temperature is the centigrade(&deg;C) or Kelvin(K). 0 Kelvin is centred around absolute zero, or the coldest temperature(-273.15&deg;C) and the centigrade is centred around water, so the boiling point of water will be 100&deg;C, and the melting point of ice will be 0&deg;C</li>
+    </ul>
+    <p>Many instruments are used to measure length, e.g., the <strong>Metre stick</strong>, the <strong>trundle wheel</strong>, and the <strong>Vernier calliper</strong>. The Vernier calliper is used measure the diameter of an object.</p>
+    <p>&nbsp;<img src="https://cdn.axminstertools.com/media/catalog/product/cache/178130bff8f35812b0f00b2e75c662fd/9/1/910359_xl.jpg" alt="Calipers - Wikipedia" /></p>
+    <p class="label">Vernier caliper</p>
+    <p>Mass is the amount of matter in a certain body. The main instrument to measure mass is the <strong>mass balance</strong>.</p>
+    <p>Area is the amount of surface something has. The equation for finding out the area of a surface is width &times; height. (e.g., area of rectangle with sides 2cm and 4cm will be 8cm<sup>2</sup>)</p>
+    <p>Volume is the amount of space something takes up. The equation for finding out the volume of a surface is width &times; height &times; depth. (e.g., volume of cuboid with sides 2cm, 3cm and 4cm will be 24cm<sup>3</sup>). The volume of a liquid is found using a <strong>graduated cylinder</strong>.</p>
+    <p>Temperature is usually measured with a <strong>thermometer</strong>.</p>
+    <p>The different types of errors that can occur with measurements are:</p>
+    <p>Parallax errors, where a measurement looks like it&rsquo;s a different reading depending on what direction you look at it from, zero errors, where an instrument gives a reading when it is meant to be zero, and reaction time errors, where you have a different reaction time every time you conduct the experiment, resulting in a biased test.</p>
+    `],
+        tags: ['Physics'],
+        page: ["Science"]
+      },
+      {
+        name: "Density",
+        data: [`
+    <p>Density is the mass per unit volume, or</p>
+    <p>&nbsp;</p>`, `canvas|equation|false|200,200|D = \\frac{M}{V}`, `
+    <p>Where D is density, M is mass and V is volume.</p>
+    <p>The standard unit of density is the kg/m<sup>3</sup>. The density of water is 1g/cm<sup>3</sup>, since mass is centred around water.<br /> Something will float on a fluid if it is less dense than the fluid, and vice versa. 
+    This tendency is known as buoyancy, which was discovered by Archimedes in his famous episode with the bath.</p>
+    `],
+        page: ["Science"]
+      },
+      {
+        name: "Motion",
+        data: [`
+    <p><strong>Speed</strong> is the rate in which an object is moving. It is calculated with this formula</p>
+    `, `canvas|equation|false|200,200|S = \\frac{D}{T}`, `
+    <p>when S is speed, D is distance and T is time.</p>
+    <p>The standard unit for speed is the metre per second (m/s or m s<sup>-1</sup>). <strong>Terminal velocity</strong> is the steady speed achieved by an object falling through a gas/liquid.</p>
+    <p><strong>Velocity</strong> is the rate at which an object is moving, at a specific direction. It is calculated with</p>
+    `, `canvas|equation|false|200,200|V = \\frac{D}{T}`, `
+    <p>when V is velocity, D is the distance in a given direction and T is time.</p>
+    <p>When a body is speeding up, it is usually said to be accelerating. It is calculated with this formula</p>
+    `, `canvas|equation|false|200,200|A = \\frac{∆V}{T}`, `
+    <p>when A is acceleration, ∆V is the change in velocity (Note: ∆ shows a change in something) and T is time.</p>
+    <p>On earth, <strong>air resistance</strong> exists to slow bodies down. The faster you go, the stronger the air resistance becomes. When you are in a vacuum with no air, any object regardless of their density will fall at the same rate.</p>
+    `],
+        page: ["Science"]
+      },
+      {
+        name: "Force",
+        data: [`
+    <p>Force is the push or pull on an object with mass, which causes it to change its velocity, and it is usually measured with a newton balance.</p>
+    <p><img src="https://www.japson.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/p/spring_balance_flat_type.jpg" alt="Spring (Newton) Balance, Flat Type - Spring Balances ..." /></p>
+    <p class="label">Newton balance</p>
+    <p>Forces can cause things to move, stop, speed up, slow down or change shape.</p>
+    <p>The unit of force is the <strong>newton</strong> (N). <br /> <strong>Weight</strong> is the force of gravity acting on an object, and on earth it is roughly calculated by multiplying the mass of an object and multiplying it by 10. It can change depending on what part of the universe you are in, compared to mass which is not influenced by gravitational pull.</p>
+    <p>Forces can be either balanced or unbalanced. Balanced forces have no motion as they cancel each other out.</p>
+    <p>For magnets, similar poles repel each other and opposite poles attract. Similarly for electric currents, opposite charges attract and similar charges repel.</p>
+    <p>There are four fundamental forces at work in the universe. The strong force, the weak force, the electromagnetic force, and the gravitational force.</p>
+    <p>Forces always occur in pairs. For every action, there is an equal and opposite reaction as stated in the newton&rsquo;s laws of motion.</p>
+    `],
+        page: ["Science"]
+      },
+      {
+        name: "Energy",
+        data: [`
+    <p><strong>Work</strong> measures the energy transfer that happens when an object is moved with a force, and it is measured in <strong>Joules </strong>(J). The formula is</p>
+    `, `canvas|equation|false|200,200|W = F∙D`, `
+    <p>when W is work, F is force and D is distance</p>
+    <p><strong>Energy</strong> is the ability to do work, and it is, like work, measured in <strong>joules</strong> (J). The different forms of energy are: Kinetic, Potential (which includes elastic and gravitational), Heat, Light, Sound (which is caused by vibrations), Electrical, Chemical and magnetic.</p>
+    <p>The principal of conservation of energy states that energy cannot be created or destroyed. It can only be changed from one form, into another.</p>
+    <p><strong>Dissipation</strong> is a term that used to describe a way in which energy is wasted, by turning into less useful forms, like heat.</p>
+    <p><strong>Power</strong> is the amount of energy converted into another form of energy in a span of time, and it is measured in <strong>watts</strong> (w). The formula is</p>
+    `, `canvas|equation|false|200,200|P = \\frac{W}{t}`, `
+    <p>when P is power, W is the work done in joules and t is time.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    `],
+        page: ["Science"]
+      },
+      {
+        name: "Electricity",
+        data: [`
+    <p>Electricity is the result of the movement of electrons, which have a negative charge. In a conductor the outer electrons on the atom to move freely, and allows charge to pass through it. When charge passes through a conductor, it is known as current electricity.</p>
+    <p>(<strong>I</strong>) is the symbol for Current electricity, and its unit is the ampere (<strong>A</strong>). It is measured with an ammeter.</p>
+    <p>The opposite of a conductor is an insulator, and electrons are not free to move, and does not allow charge to pass through it. Regardless of this, insulators can still be charged with static electricity. When two insulators rub with each other, electrons can pass from one another. This is called <strong>static electricity</strong>. When one object has more electrons than protons, it is negatively charged, and when an object has more protons than electrons, it is positively charged.</p>
+    <p>An electric field is an area of space that is around a charged object/particle. Charged forces attract when they are opposite charges (+-/-+) and repel when they are the same (++/--).</p>
+    <p>Potential difference or <strong>Voltage</strong> is the amount of energy that is needed to move a charge against an electric field. <br /> (<strong>V</strong>) is the symbol for voltage and its unit is the volt (<strong>V</strong>). It is measured with a voltmeter.</p>
+    <p>Resistance is the ability of a certain body to oppose the flow of charge.</p>
+    <p>(<strong>R</strong>) is the symbol for resistance and its unit is the ohm (Ω).</p>
+    <p>Ohms law is the law that states that voltage is proportionally related to currents. It&rsquo;s formula is</p>
+    <p>When V is volts, R is resistance and I is currents.</p>
+    <p>Electrical power is the amount of electrical energy that is being converted / dissipated into other forms p/s.</p>
+    <p>(<strong>P</strong>) is the symbol for electrical power, and its unit is the watt (<strong>W</strong>).</p>
+    <p>The formula for finding the electrical power is</p>
+    `, `canvas|equation|false|200,200|P = \\frac{V}{I}`, `
+    <p>When P is electrical power, V is volts and I is currents.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    `],
+        page: ["Science"]
+      },
+      {
+        name: "The Solar System",
+        data: [`canvas|space|false|800,800|[[0, 0, 25, "#f48037", 250, [0, 0]], [50, 0, 5, "brown", 0.01, [0, 3]], [100, 0, 5, "red", 0.01, [0, 2.1213203435596424]], [150, 0, 5, "#79AC78", 0.01, [0, 1.7320508075688772]],[200, 0, 4, "red", 0.01, [0, 1.5]],[250, 0, 7, "#B3A492", 0.01, [0, 1.3416407864998738]],[275, 0, 5, "#EAC696", 0.01, [0, 1.2792042981336627]],[300, 0, 3, "blue", 0.01, [0, 1.224744871391589]],[350, 0, 3, "lightblue", 0.01, [0, 1.1338934190276817]],[375, 0, 4, "purple", 0.01, [0, 1.0954451150103321]]]`],
+        page: ["Science"]
+      },
+
+      // ================
+      // French
+      // ================
+
+      {
+        name: "French Tenses (Glance Sheet)",
+        data: [`
+    <li>
+    1.	<b>Future Simple (Futur Simple)</b>:</br>
+      Used to express actions or events that will happen in the future.</br>
+      Formed by adding specific endings to the infinitive verb.</br>
+      Regular verbs follow the pattern: infinitive + endings (-ai, -as, -a, -ons, -ez, -ont).</br>
+      Example: Je parlerai (I will speak).</br>
+    </li><li>
+    2.	<b>Near Future (Futur Proche)</b>:</br>
+      Used to express actions or events that are going to happen soon.</br>
+      Formed by using the present tense of the verb "aller" (to go) followed by the infinitive of the main verb.</br>
+      Example: Je vais parler (I am going to speak).</br>
+    </li><li>
+    3.	<b>Passé Composé with "Avoir" (Compound Past with "To Have")</b>:</br>
+      Used to express completed actions or events in the past.</br>
+      Formed by conjugating the auxiliary verb "avoir" in the present tense, followed by the past participle of the main verb.</br>
+      Example: J'ai parlé (I spoke/I have spoken).</br>
+    </li><li>
+    4.	<b>Passé Composé with "Être" (Compound Past with "To Be")</b>:</br>
+      Used for specific verbs of motion, reflexive verbs, and a few other verbs.</br>
+      Formed by conjugating the auxiliary verb "être" in the present tense, followed by the past participle of the main verb.</br>
+      Example: Je suis allé(e) (I went/I have gone).</br>
+    </li><li>
+    5.	<b>Irregular Past Participles</b>:</br>
+      Some verbs have irregular past participles in the passé composé.</br>
+      Examples: boire (bu), prendre (pris), voir (vu), etc.</br>
+    </li><li>
+    6.	<b>Imperative</b>:</br>
+      Used to give commands or make requests.</br>
+      The imperative form usually corresponds to the second-person singular (tu), first-person plural (nous), and second-person plural (vous) forms of the present tense.</br>
+      Example: Parle (Speak), Parlons (Let's speak), Parlez (Speak/You all speak).</br>
+    </li><li>
+    7.	<b>Present Tense</b>:</br>
+      Used to express actions or states happening in the present.</br>
+      Regular verbs follow specific endings for each subject pronoun.</br>
+      Example: Je parle (I speak/I am speaking).</br>
+    </li>
+    `],
+        page: ["French", "Grammar"]
+      },
+      {
+        name: "Rooms in the house",
+        data: [`
+      This is a list of French words related with a house
+      <table><tbody><tr><td width="321">Une maison jumel&eacute;e</td><td width="260">a semi-detached house&nbsp;</td></tr><tr><td width="321">&nbsp;Une maison de plain-pied</td><td width="260">a bungalow&nbsp;&nbsp;</td></tr><tr><td width="321">Une maison mitoyenne</td><td width="260">terraced&nbsp;</td></tr><tr><td width="321">Un HLM (habitation &agrave; loyer mod&eacute;r&eacute;)</td><td width="260">a council house&nbsp;</td></tr><tr><td width="321">Une maison individuelle</td><td width="260">a detached house&nbsp;</td></tr><tr><td width="321">A c&ocirc;t&eacute; de</td><td width="260">next to/beside&nbsp;&nbsp;</td></tr><tr><td width="321">Derri&egrave;re</td><td width="260">behind&nbsp;&nbsp;</td></tr><tr><td width="321">En dehors de&hellip;</td><td width="260">outside of&nbsp;&nbsp;</td></tr><tr><td width="321">&Agrave; gauche</td><td width="260">to the left&nbsp;&nbsp;</td></tr><tr><td width="321">&Agrave; droite</td><td width="260">to the right&nbsp;&nbsp;</td></tr><tr><td width="321">Au sous sol</td><td width="260">in the basement&nbsp;&nbsp;</td></tr><tr><td width="321">Une buanderie</td><td width="260">a laundry/utility room&nbsp;&nbsp;</td></tr><tr><td width="321">Une douche</td><td width="260">a shower&nbsp;&nbsp;</td></tr><tr><td width="321">En face de</td><td width="260">in front of / opposite&nbsp;</td></tr><tr><td width="321">Entre</td><td width="260">among/amongst&nbsp;&nbsp;</td></tr><tr><td width="321">Balcon</td><td width="260">balcony&nbsp;&nbsp;</td></tr><tr><td width="321">C&rsquo;est joli</td><td width="260">it&rsquo;s nice/pretty&nbsp;</td></tr><tr><td width="321">Bien rang&eacute;(e)</td><td width="260">neat and tidy&nbsp;&nbsp;</td></tr></tbody></table>&nbsp;</p>
+      `],
+        page: ["French", "Vocabulary"]
+      },
+      {
+        name: "Irregular verbs (Glance Sheet)",
+        data: [
+          `
+      <b>Être (to be):</b></br>
+      Présent: suis, es, est, sommes, êtes, sont</br>
+      Passé composé: été</br>
+      Futur: serai, seras, sera, serons, serez, seront</br>
+      <b>Avoir (to have):</b></br>
+      Présent: ai, as, a, avons, avez, ont</br>
+      Passé composé: eu</br>
+      Futur: aurai, auras, aura, aurons, aurez, auront</br>
+      <b>Aller (to go):</b></br>
+      Présent: vais, vas, va, allons, allez, vont</br>
+      Passé composé: suis allé(e), es allé(e), est allé(e), sommes allé(e)s, êtes allé(e)(s), sont allé(e)s</br>
+      Futur: irai, iras, ira, irons, irez, iront</br>
+      <b>Faire (to do/make):</b></br>
+      Présent: fais, fais, fait, faisons, faites, font</br>
+      Passé composé: fait</br>
+      Futur: ferai, feras, fera, ferons, ferez, feront</br>
+      <b>Pouvoir (to be able to):</b></br>
+      Présent: peux, peux, peut, pouvons, pouvez, peuvent</br>
+      Passé composé: pu</br>
+      Futur: pourrai, pourras, pourra, pourrons, pourrez, pourront</br>
+      <b>Vouloir (to want):</b></br>
+      Présent: veux, veux, veut, voulons, voulez, veulent</br>
+      Passé composé: voulu</br>
+      Futur: voudrai, voudras, voudra, voudrons, voudrez, voudront</br>
+      <b>Savoir (to know):</b></br>
+      Présent: sais, sais, sait, savons, savez, savent</br>
+      Passé composé: su</br>
+      Futur: saurai, sauras, saura, saurons, saurez, sauront</br>
+      <b>Venir (to come):</b></br>
+      Présent: viens, viens, vient, venons, venez, viennent</br>
+      Passé composé: venu(e)</br>
+      Futur: viendrai, viendras, viendra, viendrons, viendrez, viendront</br>
+      <b>Devoir (to have to):</b></br>
+      Présent: dois, dois, doit, devons, devez, doivent</br>
+      Passé composé: dû</br>
+      Futur: devrai, devras, devra, devrons, devrez, devront</br>
+    `],
+        page: ["French", "Grammar"]
+      }
+    ]
+
+    drawScreens["molecules"] = (canvas, element) => {
+      let molecule = JSON.parse(element);
+      molecule = {
+        name: molecule[0],
+        initial: molecule[1],
+        mass: molecule[2],
+        number: molecule[3],
+        group: molecule[4]
+      };
+      let dots = [2, 8, 8, 4]
+      let x = canvas.width / 2
+      let y = canvas.height / 2 - 50
+
+      function drawDots(i, ring, angles) {
+        let angle = (2 * Math.PI) / i;
+        ctx.fillStyle = groups[molecule.group].colour;
+        ctx.strokeStyle = "gray";
+        ctx.beginPath()
+        ctx.arc(x, y, (radius + ring * gap), 0, 2 * Math.PI)
+        ctx.lineWidth = 5;
+        ctx.stroke()
+        ctx.closePath()
+        for (let j = 0; j < i; j++) {
+          ctx.beginPath()
+          ctx.arc(x + (radius + ring * gap) * Math.cos(angle * (j + 1) + angles), y + (radius + ring * gap) * Math.sin(angle * (j + 1) + angles), 13, 0, 2 * Math.PI)
+          ctx.fill()
+          ctx.closePath()
+        }
+
+      }
+      render = (ctx) => {
+        right = (right + Math.PI / 360) % (Math.PI * 2);
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
+        ctx.beginPath()
+        ctx.fillStyle = groups[molecule.group].colour;
+        ctx.arc(x, y, 100, 0, 2 * Math.PI)
+        ctx.fill()
+        ctx.font = "bold 80px Franklin Gothic Medium"
+        ctx.textAlign = "center"
+        ctx.fillStyle = "black"
+        ctx.fillText(molecule.initial, x, y + 20)
+        ctx.fillStyle = "white"
+        ctx.textAlign = "left"
+        ctx.fillText(molecule.name, 50, canvas.height - 50)
+        ctx.font = "bold 40px Franklin Gothic Medium"
+        ctx.textAlign = "right"
+        ctx.fillText(molecule.mass, canvas.width - 50, canvas.height - 50)
+        ctx.textAlign = "left"
+        ctx.fillText(molecule.number, 50, 100)
+
+        ctx.closePath()
+        let numbers = molecule.number;
+        for (let i = 0; i < dots.length; i++) {
+          if (dots[i] > numbers) {
+            drawDots(numbers, i + 1, right)
+            console.log(numbers)
+            break;
+          } else if (dots[i] < numbers) {
+            drawDots(dots[i], i + 1, right)
+            numbers = numbers - dots[i];
+          } else {
+            drawDots(dots[i], i + 1, right)
+          }
+        }
+      }
+      update = () => {
+
+      }
+      self = {
+        update,
+        render,
+        tags: ['chemistry', 'science'],
+      }
+      return self
+    }
+
+    drawScreens["angle"] = (context, canvas, data) => {
+      let linearr = JSON.parse(data);
+      let angle = linearr[0]
+      let length = linearr[1]
+      let mouse = linearr[2] || false;
+      let bisect = linearr[3] || false;
+      let points, points2, pointsbisect, pointsbisection, distance, findAngle, findAngle2, angleRadians;
+
+      render = (ctx) => {
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.strokeStyle = "#8A90A4"
+        ctx.lineWidth = 5;
+
+        ctx.beginPath();
+        ctx.arc(canvas.width / 2, canvas.height / 2, 40, Math.PI * 2 - angleRadians, 0)
+        ctx.moveTo(canvas.width / 2 + length, canvas.height / 2); // Starting point at the origin
+        ctx.closePath();
+        ctx.stroke();
+
+        // Start drawing
+        ctx.beginPath();
+        ctx.moveTo(canvas.width / 2 + length, canvas.height / 2); // Starting point at the origin
+        ctx.lineTo(canvas.width / 2, canvas.height / 2); // Draw the base side
+        ctx.lineTo(canvas.width / 2 + points[0], canvas.height / 2 + points[1]); // Draw the other side
+        ctx.moveTo(canvas.width / 2 + length, canvas.height / 2); // Starting point at the origin
+        ctx.closePath();
+
+        ctx.strokeStyle = "#89C2EF";
+        ctx.stroke();
+
+        // Cleanup
+        ctx.closePath();
+
+        if (bisect) {
+          ctx.lineWidth = 5;
+
+          ctx.strokeStyle = "#FDE6E0"
+          ctx.beginPath();
+          ctx.arc(canvas.width / 2 + points2[0], canvas.height / 2 + points2[1], distance, findAngle - angToRad(15), findAngle + angToRad(15))
+          ctx.moveTo(canvas.width / 2 + length, canvas.height / 2); // Starting point at the origin
+          ctx.closePath();
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(canvas.width / 2 + 40, canvas.height / 2, distance, findAngle2 - angToRad(15), findAngle2 + angToRad(15))
+          ctx.moveTo(canvas.width / 2 + length, canvas.height / 2); // Starting point at the origin
+          ctx.closePath();
+          ctx.stroke();
+          ctx.strokeStyle = "#F79C82"
+          ctx.beginPath();
+          ctx.moveTo(canvas.width / 2 + pointsbisection[0], canvas.height / 2 + pointsbisection[1]); // Starting point at the origin
+          ctx.lineTo(canvas.width / 2, canvas.height / 2); // Draw the base side
+          ctx.closePath();
+          ctx.stroke();
+        }
+      }
+
+      function findPoint(length, angleRadians) {
+        let x1 = length * Math.cos(angleRadians);
+        let y1 = length * -Math.sin(angleRadians);
+        return [x1, y1]
+      }
+
+      update = () => {
+        angleRadians = angToRad(angle)
+        points = findPoint(length, angleRadians);
+        points2 = findPoint(40, angToRad(angle));
+        pointsbisect = findPoint(length - 30, angToRad(angle / 2));
+        pointsbisection = findPoint(length + 30, angToRad(angle / 2));
+        distance = getDistance(pointsbisect[0], pointsbisect[1], points2[0], points2[1])
+        findAngle = Math.atan2(pointsbisect[1] - points2[1], pointsbisect[0] - points2[0])
+        findAngle2 = Math.atan2(pointsbisect[1], pointsbisect[0] - 40)
+
+        if (mouse) {
+          let rect = canvas.getBoundingClientRect()
+          angle = -Math.atan2(mY - (rect.top + canvas.height / 2 - 100), mX - (rect.left + canvas.width / 2 - 100)) * 57.2958;
+          if (angle < 0) {
+            angle = 180 - Math.abs(angle) + 180;
+          }
+        }
+      }
+      self = {
+        update,
+        render,
+        data: linearr,
+        ctx: context
+      }
+      return self
+    }
+
+    drawScreens["space"] = (context, canvas, data) => {
+      let planets = JSON.parse(data);
+      console.log(planets)
+      const G = -1.8;
+      planets = planets.map(function (program) {
+        return {
+          x: program[0] + canvas.width / 2,
+          y: program[1] + canvas.height / 2,
+          radius: program[2],
+          colour: program[3],
+          mass: program[4],
+          velocity: program[5]
+        }
+      })
+      render = (ctx) => {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.1)"
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+        for (let i = 0; i < planets.length; i++) {
+          planets[i].x += planets[i].velocity[0]
+          planets[i].y += planets[i].velocity[1]
+          ctx.beginPath()
+          ctx.fillStyle = planets[i].colour;
+          ctx.arc(planets[i].x, planets[i].y, planets[i].radius, 0, Math.PI * 2)
+          ctx.fill()
+          ctx.closePath()
+        }
+      }
+      update = () => {
+        for (let i = 0; i < planets.length; i++) {
+          const totalForceOnPlanet1 = [0, 0];
+          for (let j = 0; j < planets.length; j++) {
+            if (i != j) {
+              let attraction = force(planets[i].mass, planets[j].mass, [planets[i].x, planets[i].y], [planets[j].x, planets[j].y])
+              totalForceOnPlanet1[0] += attraction[0];
+              totalForceOnPlanet1[1] += attraction[1]
+            }
+          }
+          planets[i].velocity[0] += totalForceOnPlanet1[0] / planets[i].mass;
+          planets[i].velocity[1] += totalForceOnPlanet1[1] / planets[i].mass;
+        }
+      }
+      function force(mass1, mass2, pt1, pt2) {
+        const x1 = pt1[0];
+        const x2 = pt2[0];
+        const y1 = pt1[1];
+        const y2 = pt2[1];
+        const dist = Math.sqrt(((x1 - x2) ** 2) + ((y1 - y2) ** 2));
+
+        if (dist < 40) {
+          return [0, 0];
+        }
+        const xHat = (x2 - x1) / dist;
+        const yHat = (y2 - y1) / dist;
+        const forceMagnitude = (-G * mass1 * mass2) / (dist ** 2);
+        const forceXVector = xHat * forceMagnitude;
+        const forceYVector = yHat * forceMagnitude;
+        return [forceXVector, forceYVector];
+      }
+      self = {
+        update,
+        render,
+        data: planets,
+        ctx: context
+      }
+      return self
+    }
+
+
+    let state = {
+      type: "list",
+      title: "Home",
+      data: pages,
+      colour: undefined
+    };
+    let myReq;
+
+    window.history.replaceState(state, null, "");
+
+    document.onmousemove = function (event) {
+      mX = event.pageX;
+      mY = event.pageY;
+    }
+
+    function angToRad(angle) {
+      return (angle * Math.PI) / 180;
+    }
+
+    function getDistance(x1, y1, x2, y2) {
+      let y = x2 - x1;
+      let x = y2 - y1;
+      return Math.sqrt(x * x + y * y);
+    }
+    function checkContent(page) {
+      const render = [];
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].page.length > 1) {
+          if (data[i].page[1] == page && data[i].page[0] == currentPage[1]) {
+            render.push(data[i])
+          }
+        } else {
+          if (data[i].page[0] == page) {
+            render.push(data[i])
+          }
+        }
+      }
+      return render
+    }
+
+    function findColour(page) {
+      for (let i = 0; i < pages.length; i++) {
+        if (pages[i].name == page) {
+          return pages[i].colour
+        }
+      }
+    }
+
+
+    function drawContent(data, back = false) {
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+      cancelAnimationFrame(myReq)
+      if (!back) {
+        state.data = data;
+        state.type = mode;
+        state.title = data.name;
+        window.history.pushState(state, null, location.href + "/page/" + data.url);
+      }
+      document.getElementById("nav").style.display = "none"
+      contents.style.marginLeft = "120px"
+      contents.innerHTML = "";
+      let post = document.createElement("div")
+      post.className = "post"
+      let backDiv = document.createElement("div");
+      backDiv.className = "backDiv"
+      if (data.page[0]) {
+        backDiv.innerHTML = `<a class="back" onclick="goToPage('${data.page[0]}', '${data.page[0]}')">◀ Back to list</a>`
+      } else {
+        backDiv.innerHTML = `<a class="back" onclick="goToPage('${data.page[1]}', '${data.page[0]}')">◀ Back to list</a>`
+      }
+      contents.appendChild(backDiv)
+      let li = document.createElement("div");
+      li.className = "header";
+      li.innerHTML = `<h1>${data.name}</h1>`;
+      /*   */
+      if (data.test != undefined) {
+        let button1 = document.createElement("button");
+        button1.className = "toggle"
+        if (mode == "text") {
+          button1.classList.add("active")
+        } else {
+          button1.setAttribute("onclick", "mode = 'text'; drawContent(" + JSON.stringify(data) + ")")
+        }
+        button1.id = "texts"
+        button1.innerHTML = "Text"
+        li.appendChild(button1)
+        let button2 = document.createElement("button");
+        button2.className = "toggle"
+        button2.innerHTML = "Practice"
+        if (mode == "questions") {
+          button2.classList.add("active")
+        } else {
+          button2.setAttribute("onclick", "mode = 'questions'; drawContent(" + JSON.stringify(data) + ")")
+        }
+        li.appendChild(button2)
+      }
+      post.appendChild(li);
+      let container = document.createElement("div");
+      container.className = "contain";
+      let main = document.createElement("div");
+      main.className = "main";
+      if (mode == "text") {
+        let element = 0;
+        let docanvas = false;
+        clear()
+        for (let i = 0; i < data.data.length; i++) {
+          let split = data.data[i].split("|");
+          if (split[0] == "canvas") {
+            docanvas = true;
+            main.appendChild(initCanvas(split, element))
+            element += 1;
+          } else {
+            let content = document.createElement("div")
+            content.innerHTML = data.data[i]
+            main.appendChild(content)
+          }
+        }
+        container.appendChild(main);
+        post.appendChild(container);
+        if (docanvas) {
+          myReq = requestAnimationFrame(tick);
+        }
+      } else {
+        let container = document.createElement("div");
+        container.className = "contain";
+        let main = document.createElement("div");
+        main.className = "main";
+        for (let i = 0; i < data.test.length; i++) {
+          if (typeof data.test[i] == "string") {
+            let question = document.createElement("div");
+            question.innerHTML = `<h2>${data.test[0]}</h2>`;
+            main.appendChild(question);
+          } else {
+            let questionData = {
+              question: data.test[i].question,
+              answers: data.test[i].answers
+            }
+            main.appendChild(createQuestion(questionData, i));
+          }
+        }
+        container.appendChild(main)
+        post.appendChild(container)
+      }
+      contents.appendChild(post)
+    }
+
+    function tick() {
+      objectsToRemove.length = 0;
+      for (let i = 0; i < Objects.length; i++) {
+        for (let j = 0; j < Objects[i].length; j++) {
+          if (Objects[i][j].update?.()) {
+            objectsToRemove.push(Objects[i][j]);
+          }
+          Objects[i][j].render?.(Objects[i][j].ctx);
+        }
+        if (objectsToRemove.length) { remove(objectsToRemove); }
+      }
+      myReq = requestAnimationFrame(tick)
+    }
+
+    function add(obj, element) {
+      Objects[element] = (Objects[element] ?? []);
+      Objects[element].push(obj);
+    }
+
+
+    function initCanvas(split, element) {
+      let treated = split[4];
+      let type = split[1];
+      let dimentions = split[3].split(",");
+      const container = document.createElement("div")
+      container.className = "container";
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = dimentions[0];
+      canvas.height = dimentions[1];
+      container.appendChild(canvas)
+      add(drawScreens[type](ctx, canvas, treated), element)
+      return container
+    }
+
+    function createQuestion(data, element) {
+      let div = document.createElement("div");
+      if (data.question.length > 0) {
+        div.innerHTML = `<h3>${data.question}</h3>`;
+      } else {
+        div.innerHTML = data.question;
+      }
+      let input = document.createElement("input");
+      input.id = element;
+      input.className = "quiz";
+      input.onkeydown = function (e) {
+        if (e.key == "Enter") {
+          checkAnswer(data, input)
+        }
+      }
+      div.appendChild(input)
+      let checkButton = document.createElement("button");
+      checkButton.className = "quizBtn"
+      checkButton.innerHTML = "check"
+      checkButton.tabIndex = "-1"
+      checkButton.onclick = function () {
+        checkAnswer(data, input)
+      }
+
+      let showButton = document.createElement("button");
+      showButton.className = "quizBtn"
+      showButton.innerHTML = "show answer"
+      showButton.tabIndex = "-1"
+      showButton.onclick = function () {
+        document.getElementById(element).value = data.answers[0]
+      }
+      div.appendChild(checkButton)
+      div.appendChild(showButton)
+      return div
+    }
+
+    function checkAnswer(data, currentInput) {
+      for (let i = 0; i < data.answers.length; i++) {
+        if (currentInput.value.toLowerCase().includes(data.answers[i].toLowerCase())) {
+          currentInput.style.color = "#fff"
+          currentInput.style.background = "green";
+          setTimeout(() => { currentInput.style.background = "#f1f1f1"; currentInput.style.color = "#000" }, 500)
+          break
+        } else {
+          if (i == data.answers.length - 1) {
+            currentInput.style.color = "#fff"
+            currentInput.style.background = "red";
+            setTimeout(() => { currentInput.style.background = "#f1f1f1"; currentInput.style.color = "#000" }, 500)
+          }
+        }
+      }
+    }
+
+    function initFilter() {
+      let tagElement = document.getElementById("tags");
+      tagElement.innerHTML = "";
+      for (let i = 0; i < tags.length; i++) {
+        let group = document.createElement("optgroup");
+        group.label = tags[i].name;
+        group.innerHTML = `<option value="All">All tags</option>`
+        for (let j = 0; j < tags[i].tags.length; j++) {
+          group.innerHTML += `<option value="${tags[i].tags[j].toLowerCase()}">${tags[i].tags[j]}</option>`
+        }
+        tagElement.appendChild(group);
+      }
+    }
+    function goToPage(target, root) {
+      function searchNestedArray(currentArray, currentPath) {
+        for (let i = 0; i < currentArray.length; i++) {
+          const currentElement = currentArray[i];
+          const newPath = [...currentPath, i];
+
+          if (currentElement.subs && currentElement.subs.length > 0) {
+            const result = searchNestedArray(currentElement.subs, newPath);
+            if (result) {
+              return result;
+            }
+          }
+
+          if (currentElement.name === target && pages[newPath[0]].name == root) {
+            console.log(`Element found: ${currentElement.name}`);
+            console.log(`Path in the array: ${newPath.join(" -> ")}`);
+            currentPage = ["Home"];
+            for (let j = 0; j < newPath.length - 1; j++) {
+              currentPage.push(pages[newPath[j]].name)
+            }
+            renderLists(currentElement.subs, currentElement.name, currentElement.locked, pages[newPath[0]].colour);
+          }
+        }
+        return null;
+      }
+
+      return searchNestedArray(pages, []);
+    }
+
+
+    function renderLists(list, title, back, colour) {
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+      document.getElementById("nav").style.display = "block"
+      contents.style.marginLeft = "240px"
+      cancelAnimationFrame(myReq)
+      let content = checkContent(title);
+      document.title = "Hatch - " + title;
+      if (title == "Home") {
+        currentPage = ["Home"]
+      } else {
+        currentPage.push(title)
+      }
+
+      if (!back && title != "Home") {
+        state.data = list;
+        state.type = "list";
+        state.title = title;
+        if (title == "Home") {
+          state.currentPage = ["Home"]
+        } else {
+          state.currentPage = currentPage;
+        }
+        if (colour) {
+          state.colour = colour;
+        }
+        window.history.pushState(state, null, location.href + "/list/" + currentPage.slice(1).join("/").replace(/ /g, "-"));
+      }
+
+      let divs = document.createElement("div");
+      divs.className = "urls";
+      for (let i = 0; i < currentPage.length; i++) {
+        let a = document.createElement("a");
+        if (i != 0) {
+          a.setAttribute("onclick", `goToPage("${currentPage[i]}", "${currentPage[1]}")`);
+        } else {
+          a.setAttribute("onclick", `init()`);
+        }
+
+        a.innerHTML = currentPage[i]
+
+        divs.appendChild(a)
+        if (i != currentPage.length - 1) {
+          divs.innerHTML += " > "
+        }
+      }
+      contents.innerHTML = ""
+      contents.appendChild(divs);
+      if (content.length > 0) {
+        for (let i = 0; i < content.length; i++) {
+          drawCard(content[i], findColour(content[i].page[0]), () => { mode = "text"; drawContent(content[i]) })
+        }
+      }
+
+
+      if (list != undefined) {
+        for (let i = 0; i < list.length; i++) {
+          if (title == "Home") {
+            colour = list[i].colour
+          }
+          if (list[i].subs == undefined) {
+            list[i].subs = []
+          }
+          drawList(list[i].name, colour, renderLists.bind(this, list[i].subs, list[i].name, false, colour), list[i].locked)
+        }
+      }
+
+      if (content.length == 0 && list.length == 0) {
+        let li = document.createElement("div");
+        li.className = "error"
+        li.innerHTML = "<h2>Sorry!</h2> There doesn't seem to be any notes for this topic! I'm sure there will be some soon"
+        contents.appendChild(li);
+      }
+    }
+
+    window.onpopstate = function (event) {
+      cancelAnimationFrame(myReq)
+      if (event.state) { state = event.state; }
+      if (state.type == "list") {
+        document.title = "Hatch - " + state.title
+        if (event.title == "Home") {
+          renderLists(state.data, state.title, true)
+        } else {
+          currentPage = state.currentPage;
+          renderLists(state.data, state.title, true, state.colour)
+        }
+      } else {
+        mode = state.type
+        drawContent(state.data, true)
+      }
+    };
+
+    function drawList(content, colour, func, locked = false) {
+      let li = document.createElement("div");
+      let effects = document.createElement("div");
+      li.className = "element"
+      effects.className = "colour"
+      effects.style.background = colour;
+      li.appendChild(effects);
+      let text = document.createElement("div");
+      text.innerHTML = `<b>${content}</b>`
+      text.className = "text"
+      if (!locked) {
+        li.addEventListener("click", func)
+      } else {
+        li.classList.add("locked")
+      }
+      li.appendChild(text);
+      contents.appendChild(li);
+    }
+    let levels = ["First", "Second", "Third"]
+    function drawCard(content, colour, func, locked = false) {
+      let li = document.createElement("div");
+      li.className = "card"
+      let top = document.createElement("div");
+      if (content.page[1]) {
+        top.innerHTML = `Level: ${levels[content.level - 1]} Year <b style="float: right; font-size:10px; padding-top: 3px">Page: <a onclick="goToPage('${content.page[1]}', '${content.page[0]}')">${content.page.join(",")}</a></b>`
+      } else {
+        top.innerHTML = `Level: ${levels[content.level - 1]} Year <b style="float: right; font-size:10px; padding-top: 3px">Page: <a onclick="goToPage('${content.page[0]}', '${content.page[0]}')">${content.page.join(",")}</a></b>`
+      }
+      top.className = "top";
+      top.style.background = colour;
+      li.appendChild(top);
+      let text = document.createElement("div");
+      text.innerHTML = `<h2 class="pageTitle">${content.name}</h2>`
+      if (content.tags) {
+        for (let i = 0; i < content.tags.length; i++) {
+          let tag = document.createElement("div");
+          tag.className = "tag"
+          tag.innerHTML = content.tags[i]
+          text.appendChild(tag)
+        }
+        text.innerHTML += "</br>"
+      }
+      text.innerHTML += `${content.excerpt}`
+      text.className = "contents"
+      if (!locked) {
+        text.onclick = func;
+      }
+      let baloon = document.createElement("div")
+      baloon.className = "baloon"
+      if (content.test) {
+        baloon.innerHTML = `<button>Take Quiz on topic</button>`
+      }
+      baloon.innerHTML += `<button>Share Page</button>`
+      text.appendChild(baloon)
+      li.appendChild(text);
+
+      contents.appendChild(li);
+    }
+
+    function arrayRemove(list, valuesToEvict) {
+      return list.filter((g) => !valuesToEvict.includes(g));
+    }
+
+    function remove(objList) {
+      Objects = arrayRemove(Objects, objList);
+    }
+
+    function clear() {
+      Objects = [];
+    }
+
+    function search(event, query) {
+      let tagElement = document.getElementById("tags").value;
+      let yearElement = document.getElementById("years").value;
+      let tagger = (tagElement != "All") ? true : false
+      let annualer = (yearElement != "0") ? true : false
+      if (event.key == "Enter" || event == true) {
+        contents.innerHTML = ""
+        if (query.toLowerCase() == "uwu") {
+          let li = document.createElement("div");
+          li.className = "error"
+          li.innerHTML = "<h2>UwU</h2> I guess this is an easter egg of some sorts. Ask Finn dix for more reasons on why this thing exists"
+          contents.appendChild(li);
+        } else {
+          let filterList = [];
+          for (let i = 0; i < data.length; i++) {
+            let filtered = data[i].name + data[i].page[0];
+            if (data[i].page[1]) {
+              filtered + data[i].page[1]
+            }
+            if (filtered.toLowerCase().includes(query.toLowerCase())) {
+              if (tagger) {
+                if (data[i].tags) {
+                  for (let j = 0; j < data[i].tags.length; j++) {
+                    if (data[i].tags[j].toLowerCase() == tagElement) {
+                      filterList.push(data[i])
+                    }
+                  }
+                }
+              } else {
+                filterList.push(data[i])
+              }
+            }
+          }
+
+          if (annualer) {
+            let filterList2 = [];
+            for (let i = 0; i < filterList.length; i++) {
+              if (filterList[i] && filterList[i].level == yearElement) {
+                filterList2.push(filterList[i])
+              }
+            }
+            filterList = filterList2;
+          }
+
+          if (filterList.length == 0) {
+            let li = document.createElement("div");
+            li.className = "error"
+            li.innerHTML = "<h2>Sorry!</h2> There doesn't seem to be any notes for this search term! I'm sure there will be some soon"
+            contents.appendChild(li);
+          } else {
+            contents.innerHTML += `
+        <div class="sort">
+          <h2>${filterList.length} results found</h2>
+          <ul class="sortList">
+            <li class="sorter">Subject</li>
+            <li class="sorter">A - Z</li>
+            <li class="sorter">Level</li>
+          </ul>
+        </div>
+        `
+          }
+
+          for (let i = 0; i < filterList.length; i++) {
+            drawCard(filterList[i], findColour(filterList[i].page[0]), () => { mode = "text"; drawContent(filterList[i]) })
+          }
+        }
+      }
+    }
+
+    function init() {
+      contents.innerHTML = ""
+      window.history.replaceState(state, null, "");
+      cancelAnimationFrame(myReq)
+      initFilter()
+      renderLists(pages, "Home", false, true)
+    }
+
+
+    init();
+  </script>
+</body>
+
+</html>
