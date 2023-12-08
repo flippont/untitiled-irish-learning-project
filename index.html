@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hatch - Home</title>
+  <title>World - Home</title>
 </head>
 
 <body>
@@ -468,7 +468,7 @@ button:focus {
   <div class="container">
     <div id="nav" class="nav">
       <div id="filter">
-        <button class="home" onclick="init()">Hatch</button>
+        <button class="home" onclick="init()">World</button>
         <hr>
         <h3 class="text-label">Search by term</h3>
         <input type="text" id="query" onkeydown="search(event, this.value)" placeholder="Enter search term..." />
@@ -2072,7 +2072,7 @@ button:focus {
       contents.style.marginLeft = "240px"
       cancelAnimationFrame(myReq)
       let content = checkContent(title);
-      document.title = "Hatch - " + title;
+      document.title = "World - " + title;
       if (title == "Home") {
         currentPage = ["Home"]
       } else {
@@ -2144,7 +2144,7 @@ button:focus {
       cancelAnimationFrame(myReq)
       if (event.state) { state = event.state; }
       if (state.type == "list") {
-        document.title = "Hatch - " + state.title
+        document.title = "World - " + state.title
         if (event.title == "Home") {
           renderLists(state.data, state.title, true)
         } else {
