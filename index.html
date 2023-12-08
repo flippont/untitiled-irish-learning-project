@@ -1845,7 +1845,7 @@ button:focus {
         state.data = data;
         state.type = mode;
         state.title = data.name;
-        window.history.pushState(state, null, "https://flippont.github.io/world/page/" + data.url);
+        window.history.pushState(state, null, "https://flippont.github.io/world/?p=" + data.url);
       }
       document.getElementById("nav").style.display = "none"
       contents.style.marginLeft = "120px"
@@ -2091,7 +2091,7 @@ button:focus {
         if (colour) {
           state.colour = colour;
         }
-        window.history.pushState(state, null, "https://flippont.github.io/world/list/" + currentPage.slice(1).join("/").replace(/ /g, "-"));
+        window.history.pushState(state, null, "https://flippont.github.io/world/?l=" + currentPage.slice(1).join(",").replace(/ /g, "-"));
       }
 
       let divs = document.createElement("div");
@@ -2299,7 +2299,7 @@ button:focus {
 
     function init() {
       contents.innerHTML = ""
-      window.history.replaceState(state, null, "");
+      window.history.replaceState(state, null, "https://flippont.github.io/world");
       cancelAnimationFrame(myReq)
       initFilter()
       renderLists(pages, "Home", false, true)
