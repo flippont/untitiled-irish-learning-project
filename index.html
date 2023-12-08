@@ -468,7 +468,7 @@ button:focus {
   <div class="container">
     <div id="nav" class="nav">
       <div id="filter">
-        <button class="home" onclick="init()">World</button>
+        <button class="home" onclick="init()">Flippont - World</button>
         <hr>
         <h3 class="text-label">Search by term</h3>
         <input type="text" id="query" onkeydown="search(event, this.value)" placeholder="Enter search term..." />
@@ -1845,7 +1845,7 @@ button:focus {
         state.data = data;
         state.type = mode;
         state.title = data.name;
-        window.history.pushState(state, null, location.href + "/page/" + data.url);
+        window.history.pushState(state, null, "https://flippont.github.io/world/page/" + data.url);
       }
       document.getElementById("nav").style.display = "none"
       contents.style.marginLeft = "120px"
@@ -2091,7 +2091,7 @@ button:focus {
         if (colour) {
           state.colour = colour;
         }
-        window.history.pushState(state, null, location.href + "/list/" + currentPage.slice(1).join("/").replace(/ /g, "-"));
+        window.history.pushState(state, null, "https://flippont.github.io/world/list/" + currentPage.slice(1).join("/").replace(/ /g, "-"));
       }
 
       let divs = document.createElement("div");
